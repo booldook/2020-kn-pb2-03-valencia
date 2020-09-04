@@ -6,7 +6,9 @@
 
 /********************** 이벤트콜백 *************************/
 function onScroll() {
-	scrollTop()
+	var sct = $(this).scrollTop();
+	if(sct > 10) $(".banner-frame").css("border-width", "32px");
+	else $(".banner-frame").css("border-width", 0);
 }
 
 /********************** 이벤트등록 *************************/
