@@ -1,7 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600&display=swap');
 
+/******************** 공통사항 *********************/
 html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height: 5000px;}
 
+.btn-ghost {padding: 8px 16px; border: 1px solid #fff; background-color: transparent; font-size: 14px; font-weight: 500; color: #fff;}
+.hover-active::after {display: block; content: ""; border-bottom:2px solid #fff; width: 100%; transition: all 0.3s; transform-origin: right; transform: scaleX(1);}
+.hover-active:hover::after {transform-origin: left; transform: scaleX(0);}
+.hover-link::after {display: block; content: ""; border-bottom:2px solid #fff; width: 100%; transition: all 0.3s; transform-origin: left; transform: scaleX(0);}
+.hover-link:hover::after {transform-origin: right; transform: scaleX(1);}
+.hover-ani {}
+
+
+
+/******************** .header *********************/
 .header-wrapper {width: 100%; height: 100vh; position: relative; background-color: black; overflow: hidden;}
 .header-wrapper .banner-wrap {position: relative; width: 100%; height: 100%; opacity: .6;}
 .header-wrapper .banner-wrap .banner {position: absolute; width: 100%; height: 100%; top: 0; left: 0; 
@@ -13,14 +24,17 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .header-wrapper .cont-wrap {position: absolute; width: 100%; height: 100%; top: 0; left: 0; padding: 50px 70px;}
 .header-wrapper .banner-frame {position: absolute; width: 100%; height: 100%; top: 0; left: 0; border-color: #fff; border-style: solid; border-width: 0; transition: border-width 0.75s;}
 
-.header-wrapper .top-wrap {display: flex; justify-content: space-between; font-family: 'Mukta', sans-serif;  font-weight: 500; letter-spacing: -1;}
+.header-wrapper .top-wrap {display: flex; justify-content: space-between; font-family: 'Mukta', sans-serif;  font-weight: 500; letter-spacing: -1; color: #fff;}
 .header-wrapper .top-lt {display: flex; align-items: center;}
-.header-wrapper .navi-wrap {display: flex; color: #fff; margin-left: 20px; align-items: center;}
+.header-wrapper .navi-wrap {display: flex; margin-left: 20px; align-items: center;}
 .header-wrapper .navi-wrap .navi {margin: 16px; cursor: pointer;}
 .header-wrapper .navi-wrap .divide {border-left: 1px solid #ccc; margin: 0 20px; height: 16px;}
+.header-wrapper .top-rt {display: flex; align-items: center;}
+.header-wrapper .top-rt .icon {font-size: 24px; padding: 16px;}
+.header-wrapper .top-rt .tel-wrap {display: flex; flex-direction: column; align-items: flex-end; padding: 0 32px 0 16px;}
+.header-wrapper .top-rt .tel-wrap div {}
+.header-wrapper .top-rt .tel-wrap div:nth-child(1) {font-size: 18px;}
+.header-wrapper .top-rt .tel-wrap div:nth-child(2) {font-size: 14px;}
 
-.hover-active::after {display: block; content: ""; border-bottom:2px solid #fff; width: 100%; transition: all 0.3s; transform-origin: right; transform: scaleX(1);}
-.hover-active:hover::after {transform-origin: left; transform: scaleX(0);}
-.hover-link::after {display: block; content: ""; border-bottom:2px solid #fff; width: 100%; transition: all 0.3s; transform-origin: left; transform: scaleX(0);}
-.hover-link:hover::after {transform-origin: right; transform: scaleX(1);}
+
 
