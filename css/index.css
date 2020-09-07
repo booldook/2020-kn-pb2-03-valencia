@@ -54,11 +54,15 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .header-wrapper .top-rt .tel-wrap div:nth-child(1) {font-size: 18px;}
 .header-wrapper .top-rt .tel-wrap div:nth-child(2) {font-size: 14px;}
 
-.header-wrapper .bottom-wrap {height: calc(100vh - 225px); min-height: 500px; border: 1px solid red; display: flex; flex-direction: column; justify-content: flex-end;}
-.header-wrapper .slogan-wrap {}
+.header-wrapper .bottom-wrap {height: calc(100vh - 225px); min-height: 500px; display: flex; flex-direction: column; justify-content: flex-end;}
 .header-wrapper .slogan-wrap .title-small {font-size: 14px; margin-bottom: 16px; font-weight: 500;}
 .header-wrapper .slogan-wrap .title {font-family: 'Poppins', sans-serif; font-size: 44px; font-weight: 600; letter-spacing: -2px; line-height: 46px;}
 .header-wrapper .btn-wrap {}
+.header-wrapper .btn-wrap .lists {margin: 8vh 0; display: flex;}
+.header-wrapper .btn-wrap .list {padding: 24px; border: 2px solid #fff; flex: 20% 0 0; margin-right: 2%; cursor: pointer;}
+.header-wrapper .btn-wrap .list .more {font-size: 12px; font-weight: 600; margin-bottom: 50px; letter-spacing: -1px;}
+.header-wrapper .btn-wrap .list .title {font-size: 20px; font-weight: 500;}
+.header-wrapper .btn-wrap .list .title-sub {font-size: 14px; color: #ccc;}
 .header-wrapper .sns-wrap {}
 
 
