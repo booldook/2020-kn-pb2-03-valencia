@@ -1,11 +1,13 @@
 /********************** 사전지식 *************************/
-var interval = setInterval(function(){
+/* var interval = setInterval(function(){
 	console.log("hi");
 	clearInterval(interval);
-}, 5000);
+}, 5000); */
 
 /********************** 초기설정 *************************/
 var headerListIdx = 0;
+var bannerInterval;
+
 
 /********************** 사용자함수 *************************/
 function headerBanner() {
@@ -29,10 +31,22 @@ function onResize() {
 function onListOver() {
 	headerListIdx = $(this).index();
 	headerBanner();
+	clearInterval(bannerInterval);
+}
+
+function onListLeave() {
+	bannerInterval = setInterval(onBannerInterval, 8000);
+}
+
+function onBannerInterval() {
+	if(headerListIdx == 3) headerListIdx = 0;
+	else headerListIdx++;
+	headerBanner();
 }
 
 
 /********************** 이벤트등록 *************************/
 $(window).scroll(onScroll);
 $(window).resize(onResize).trigger("resize");
-$(".header-wrapper").find(".list").mouseover(onListOver);
+$(".header-wrapper").find(".list").hover(onListOver, onListLeave);
+bannerInterval = setInterval(onBannerInterval, 8000); 
