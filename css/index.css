@@ -48,12 +48,14 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .header-wrapper .top-lt .navi-wrap {display: flex; margin-left: 20px; align-items: center;}
 .header-wrapper .top-lt .navi-wrap .navi {margin: 16px; cursor: pointer;}
 .header-wrapper .top-lt .navi-wrap .divide {border-left: 1px solid #ccc; margin: 0 20px; height: 16px;}
-.header-wrapper .top-lt .fa-bars {font-size: 24px; display: none;}
+.header-wrapper .top-lt .fa-bars {font-size: 24px; display: none; cursor: pointer; margin-left: 24px;}
 .header-wrapper .top-rt {display: flex; align-items: center;}
 .header-wrapper .top-rt .icon {font-size: 24px; padding: 16px;}
-.header-wrapper .top-rt .tel-wrap {display: flex; flex-direction: column; align-items: flex-end; padding: 0 32px 0 16px;}
+.header-wrapper .top-rt .tel-wrap {display: flex; flex-direction: column; align-items: flex-end; padding-left: 16px;}
 .header-wrapper .top-rt .tel-wrap div:nth-child(1) {font-size: 18px;}
 .header-wrapper .top-rt .tel-wrap div:nth-child(2) {font-size: 14px;}
+.header-wrapper .top-rt .fa-phone-volume {display: none;}
+.header-wrapper .top-rt .btn-ghost {margin-left: 32px;}
 
 .header-wrapper .bottom-wrap {height: calc(100vh - 225px); min-height: 500px; display: flex; flex-direction: column; justify-content: flex-end;}
 .header-wrapper .slogan-wrap .title-small {font-size: 14px; margin-bottom: 16px; font-weight: 500;}
@@ -73,5 +75,27 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 
 
 /******************** 반응형 *********************/
-/* @media screen and (max-width: ) */
+@media screen and (max-width: 1399px) {
+	.header-wrapper .top-lt .navi-wrap {display: none;}
+	.header-wrapper .top-lt .fa-bars {display: block;}
+}
+
+@media screen and (max-width: 1199px) {
+	
+} 
+
+@media screen and (max-width: 991px) {
+	.header-wrapper .banner-frame {display: none;}
+	.header-wrapper .cont-wrap {padding: 16px 24px;}
+	.header-wrapper .top-rt .tel-wrap {display: none;}
+	.header-wrapper .top-rt .fa-phone-volume {display: block;}
+}
+
+@media screen and (max-width: 767px) {
+	.header-wrapper .top-rt .btn-ghost {display: none;}
+}
+
+@media screen and (max-width: 575px) {
+
+} 
 
