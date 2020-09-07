@@ -3,12 +3,28 @@
 /******************** 공통사항 *********************/
 html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height: 5000px;}
 
-.btn-ghost {padding: 8px 16px; border: 1px solid #fff; background-color: transparent; font-size: 14px; font-weight: 500; color: #fff;}
-.hover-active::after {display: block; content: ""; border-bottom:2px solid #fff; width: 100%; transition: all 0.3s; transform-origin: right; transform: scaleX(1);}
+.btn-ghost {padding: 8px 16px; border: 1px solid #fff; background-color: transparent; font-size: 14px; font-weight: 500; color: #fff; animation-name: none; animation-duration: 0.3s;}
+.btn-ghost:hover {animation-name: btnGhost;}
+@keyframes btnGhost {
+	0% {background-color: transparent; color: #fff;}
+	50% {background-color: #fff; color: #000;}
+	100% {background-color: transparent; color: #fff;}
+}
+.hover-active, .hover-link, .hover-ani {cursor: pointer;}
+.hover-active::after, .hover-link::after, .hover-ani::after {cursor: pointer; display: block; content: ""; border-bottom:2px solid #fff;}
+.hover-active::after {transition: all 0.3s; transform-origin: right; transform: scaleX(1); cursor: pointer;}
 .hover-active:hover::after {transform-origin: left; transform: scaleX(0);}
-.hover-link::after {display: block; content: ""; border-bottom:2px solid #fff; width: 100%; transition: all 0.3s; transform-origin: left; transform: scaleX(0);}
+.hover-link::after {transition: all 0.3s; transform-origin: left; transform: scaleX(0);}
 .hover-link:hover::after {transform-origin: right; transform: scaleX(1);}
-.hover-ani {}
+.hover-ani::after {animation-name: none; animation-duration: 0.5s;}
+.hover-ani:hover::after {animation-name: hoverAni;}
+@keyframes hoverAni {
+	0% {transform-origin: right; transform: scaleX(1);}
+	49% {transform-origin: right;}
+	50% {transform-origin: left; transform: scaleX(0);}
+	99% {transform-origin: left;}
+	100% {transform: scaleX(1);}
+}
 
 
 
