@@ -22,7 +22,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .hover-link:hover::after {transform-origin: right; transform: scaleX(1);}
 .hover-ani::after {animation-name: none; animation-duration: 0.5s;}
 .hover-ani:hover::after {animation-name: hoverAni;}
-.bar-infinity::after {animation-name: hoverAni; animation-duration: 2s; animation-iteration-count: infinite;}
+.bar-infinity::after {animation-name: hoverAni; animation-duration: 2s; animation-iteration-count: infinite; animation-direction: reverse; width: 60%;}
 @keyframes hoverAni {
 	0% {transform-origin: right; transform: scaleX(1);}
 	49% {transform-origin: right;}
