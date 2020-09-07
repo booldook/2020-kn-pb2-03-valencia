@@ -34,7 +34,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 
 /******************** .header *********************/
 .header-wrapper {width: 100%; height: 100vh; position: relative; background-color: black; overflow: hidden; color: #fff;}
-.header-wrapper .banner-wrap {position: relative; width: 100%; height: 100%; opacity: .6;}
+.header-wrapper .banner-wrap {position: absolute; width: 100%; height: 100%; opacity: .6;}
 .header-wrapper .banner-wrap .banner {position: absolute; width: 100%; height: 100%; top: 0; left: 0; 
 	background-size: cover; background-repeat: no-repeat; background-position: center;}
 .header-wrapper .banner-wrap .banner:nth-child(1) {background-image: url(../img/img-1.jpg);}
@@ -97,6 +97,8 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 
 @media screen and (max-width: 767px) {
 	.header-wrapper .top-rt .btn-ghost {display: none;}
+	.header-wrapper .sns-wrap .bar {display: none;}
+	.header-wrapper .sns-wrap .hover-link {margin-left: 32px;}
 }
 
 @media screen and (max-width: 575px) {

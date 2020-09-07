@@ -11,5 +11,10 @@ function onScroll() {
 	else $(".banner-frame").css("border-width", 0);
 }
 
+function onResize() {
+	
+}
+
 /********************** 이벤트등록 *************************/
 $(window).scroll(onScroll);
+$(window).resize(onResize).trigger("resize");
