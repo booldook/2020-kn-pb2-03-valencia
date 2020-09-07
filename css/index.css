@@ -36,8 +36,8 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .header-wrapper {width: 100%; height: 100vh; position: relative; background-color: black; overflow: hidden; color: #fff;}
 .header-wrapper .banner-wrap {position: absolute; width: 100%; height: 100%; opacity: .6;}
 .header-wrapper .banner-wrap .banner {position: absolute; width: 100%; height: 100%; top: 0; left: 0; 
-	background-size: cover; background-repeat: no-repeat; background-position: center;}
-.header-wrapper .banner-wrap .banner:nth-child(1) {background-image: url(../img/img-1.jpg);}
+	background-size: cover; background-repeat: no-repeat; background-position: center; transition: all 0.75s; opacity: 0; transform: scale(1.3);}
+.header-wrapper .banner-wrap .banner:nth-child(1) {background-image: url(../img/img-1.jpg); opacity: 1; transform: scale(1);}
 .header-wrapper .banner-wrap .banner:nth-child(2) {background-image: url(../img/img-2.jpg);}
 .header-wrapper .banner-wrap .banner:nth-child(3) {background-image: url(../img/img-3a.jpg);}
 .header-wrapper .banner-wrap .banner:nth-child(4) {background-image: url(../img/img-4.jpg);}
@@ -62,10 +62,14 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .header-wrapper .slogan-wrap .title-small {font-size: 14px; margin-bottom: 16px; font-weight: 500;}
 .header-wrapper .slogan-wrap .title {font-family: 'Poppins', sans-serif; font-size: 44px; font-weight: 600; letter-spacing: -2px; line-height: 46px;}
 .header-wrapper .btn-wrap .lists {margin: 8vh 0; display: flex;}
-.header-wrapper .btn-wrap .list {padding: 24px; border: 2px solid #fff; flex: 20% 0 0; margin-right: 2%; cursor: pointer;}
-.header-wrapper .btn-wrap .list .more {font-size: 12px; font-weight: 600; margin-bottom: 50px; letter-spacing: -1px;}
-.header-wrapper .btn-wrap .list .title {font-size: 20px; font-weight: 500;}
-.header-wrapper .btn-wrap .list .title-sub {font-size: 14px; color: #ccc;}
+.header-wrapper .btn-wrap .list {padding: 24px; border: 2px solid #fff; flex: 20% 0 0; margin-right: 2%; cursor: pointer; transition: all 0.5s; opacity: 1;}
+.header-wrapper .btn-wrap .list .more {font-size: 12px; font-weight: 600; margin-bottom: 50px; letter-spacing: -1px; opacity: 0; color: #111; transition: all 0.5s;}
+.header-wrapper .btn-wrap .list .title {font-size: 20px; color: #fff; font-weight: 500; transition: all 0.5s;}
+.header-wrapper .btn-wrap .list .title-sub {font-size: 14px; color: #aaa;}
+.header-wrapper .btn-wrap .list.active {background-color: #fff; opacity: 0.8;}
+.header-wrapper .btn-wrap .list.active .more {opacity: 1;}
+.header-wrapper .btn-wrap .list.active .title {color: #111;}
+
 .header-wrapper .btn-wrap .btn-eee {display: none; margin: 24px 0 48px 0;}
 .header-wrapper .sns-wrap {display: flex; align-items: center;}
 .header-wrapper .sns-wrap .fab {font-size: 20px; padding: 8px;}
