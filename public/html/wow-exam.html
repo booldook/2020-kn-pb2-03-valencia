@@ -19,23 +19,21 @@
 </head>
 <body>
 	<div class="wrapper">
-		<!-- <div class="box wow animate__zoomInUp" data-wow-duration="1s" data-wow-offset="300"></div> -->
-		<div class="box wow animate__flash"></div>
-		<div class="box wow animate__fadeInDown"></div>
-		<div class="box wow animate__zoomInUp"></div>
-		<div class="box wow animate__zoomInLeft"></div>
-		<div class="box wow animate__zoomInRight"></div>
-		<div class="box wow animate__zoomInLeft" data-wow-duration="1.5s"></div>
+		<!-- 
+		<div class="box animate__animated wow animate__zoomInUp" data-wow-duration="1s" data-wow-offset="300"></div> -->
+		<div class="box wow animate__animated animate__flash"></div>
+		<div class="box wow animate__animated animate__fadeInDown"></div>
+		<div class="box wow animate__animated animate__zoomInUp"></div>
+		<div class="box wow animate__animated animate__zoomInLeft"></div>
+		<div class="box wow animate__animated animate__zoomInRight"></div>
+		<div class="box wow animate__animated animate__zoomInLeft" data-wow-duration="1.5s" data-wow-delay="1s"></div>
 		<div class="box wow animate__zoomInUp" data-wow-duration="1.5s"></div>
-		<div class="box wow animate__zoomInRight" data-wow-duration="1.5s"></div>
+		<div class="box wow animate__animated animate__zoomInRight" data-wow-duration="1.5s" data-wow-delay="1s"></div>
 		<div class="box"></div>
 		<div class="box"></div>
 	</div>
 	<script>
-		new WOW({
-			offset: 300,
-			animateClass: 'wow-ani'
-		}).init();
+		new WOW({ offset: 300, animateClass: 'wow-ani' }).init();
 	</script>
 </body>
 </html>

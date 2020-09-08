@@ -3,7 +3,7 @@
 ## 선택자
 - $("CSS 선택자")
 - eq(n), index()
-- parent(), children(), find()
+- parent(), children(), find(), siblings(), next(), prev()
 - each()
 
 ## DOM 관련
@@ -25,6 +25,10 @@
 - slideUp(), slideDown(), slideToggle()
 - fadeIn(), fadeOut(), fadeToggle()
 - animate()
+
+## 크기/위치(Diemesion)
+
+
 
 # 2. Javascript 정리
 
