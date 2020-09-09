@@ -32,6 +32,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 }
 
 .x100 {flex: calc(100% - 32px) 0 0; margin: 16px;}
+.x75 {flex: calc(75% - 32px) 0 0; margin: 16px;}
 .x50 {flex: calc(50% - 32px) 0 0; margin: 16px;}
 .x33 {flex: calc(33.3333% - 32px) 0 0; margin: 16px;}
 .x25 {flex: calc(25% - 32px) 0 0; margin: 16px;}
