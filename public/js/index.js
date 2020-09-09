@@ -11,6 +11,9 @@ new WOW({ offset: 200, animateClass: 'wow-ani' }).init();
 var headerListIdx = 0;
 var bannerInterval;
 
+var prdListIdx = 0;
+var prdInterval;
+
 /********************** 사용자함수 *************************/
 function headerBanner() {
 	$(".header-wrapper").find(".banner").css({"opacity": 0, "transform": "scale(1.3)"});
@@ -20,10 +23,17 @@ function headerBanner() {
 }
 
 function prdAni(idx) {
-	$(".prd-stage").find(".list").removeClass("active");
-	$(".prd-stage").find(".list").eq(idx).addClass("active");
-	var hei = $(".prd-stage").find(".sizer").eq(idx).innerHeight();
-	$(".prd-stage").innerHeight(hei);
+	$(".prd-stage").find(".pager").removeClass("active");
+	$(".prd-stage").find(".pager").eq(idx).addClass("active");
+	
+	$(".prd-stage").find(".list")
+	.css({"position": "absolute"})
+	.stop().animate({"opacity": 0}, 500, function(){
+		$(this).css({"display": "none"});
+	});
+	$(".prd-stage").find(".list").eq(idx)
+	.css({"position": "relative", "display": "block", "z-index": 2})
+	.stop().animate({"opacity": 1}, 500);
 }
 
 /********************** 이벤트콜백 *************************/
@@ -54,16 +64,24 @@ function onBannerInterval() {
 }
 
 function onPrdOver() {
-	prdAni(1);
+	prdListIdx = 1;
+	prdInterval = setInterval(function(){
+		if(prdListIdx == 2) prdListIdx = 0;
+		else prdListIdx++;
+		prdAni(prdListIdx);
+	}, 4000);
+	prdAni(prdListIdx);
 }
 
 function onPrdLeave() {
-	prdAni(0);
+	prdListIdx = 0;
+	clearInterval(prdInterval);
+	prdAni(prdListIdx);
 }
 
 function onPagerClick() {
-	var idx = $(this).index();
-	prdAni(idx);
+	prdListIdx = $(this).index();
+	prdAni(prdListIdx);
 }
 
 /********************** 이벤트등록 *************************/
