@@ -11,13 +11,19 @@ new WOW({ offset: 200, animateClass: 'wow-ani' }).init();
 var headerListIdx = 0;
 var bannerInterval;
 
-
 /********************** 사용자함수 *************************/
 function headerBanner() {
 	$(".header-wrapper").find(".banner").css({"opacity": 0, "transform": "scale(1.3)"});
 	$(".header-wrapper").find(".banner").eq(headerListIdx).css({"opacity": 1, "transform": "scale(1)"});
 	$(".header-wrapper").find(".list").removeClass("active");
 	$(".header-wrapper").find(".list").eq(headerListIdx).addClass("active");
+}
+
+function prdAni(idx) {
+	$(".prd-stage").find(".list").removeClass("active");
+	$(".prd-stage").find(".list").eq(idx).addClass("active");
+	var hei = $(".prd-stage").find(".sizer").eq(idx).innerHeight();
+	$(".prd-stage").innerHeight(hei);
 }
 
 /********************** 이벤트콜백 *************************/
@@ -47,6 +53,18 @@ function onBannerInterval() {
 	headerBanner();
 }
 
+function onPrdOver() {
+	prdAni(1);
+}
+
+function onPrdLeave() {
+	prdAni(0);
+}
+
+function onPagerClick() {
+	var idx = $(this).index();
+	prdAni(idx);
+}
 
 /********************** 이벤트등록 *************************/
 $(window).scroll(onScroll);
@@ -54,4 +72,6 @@ $(window).resize(onResize).trigger("resize");
 $(".header-wrapper").find(".list").hover(onListOver, onListLeave);
 bannerInterval = setInterval(onBannerInterval, 8000); 
 
+$(".prd-stage").hover(onPrdOver, onPrdLeave);
+$(".prd-stage .pager").click(onPagerClick);
 

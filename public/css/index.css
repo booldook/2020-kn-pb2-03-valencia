@@ -113,8 +113,8 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .brand-wrapper {position: relative; padding: 16px; display: flex;}
 .brand-wrapper .title-wrap {background-color: #eee;}
 .brand-wrapper .prd {}
-.brand-wrapper .prd.prd-stage {position: relative;}
-.brand-wrapper .prd.prd-stage > .sizer {opacity: 0;}
+.brand-wrapper .prd.prd-stage {position: relative; transition: all 1s;}
+.brand-wrapper .prd.prd-stage .sizer {opacity: 0; position: absolute;}
 .brand-wrapper .prd.prd-stage .list {width: 100%; height: 100%; position: absolute; border: 1px solid red; background-position: left center; background-repeat: no-repeat; top: 0; left: 0; transition: all 1s; z-index: 1; opacity: 0;}
 .brand-wrapper .prd.prd-stage .list.active {z-index: 2; opacity: 1;}
 .brand-wrapper .prd.prd-stage .list:nth-child(1) {background-image: url(../img/lx-1.jpg);}
