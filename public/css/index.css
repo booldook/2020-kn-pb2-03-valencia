@@ -96,6 +96,12 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .link-wrapper > .link:nth-child(5) {background-color: #10161b;}
 .link-wrapper > .link:nth-child(6) {background: url(../img/home-5a.jpg) no-repeat left;}
 
+.link-wrapper .cont-wrap {position: absolute; left: 32px; bottom: 32px; color: #f8f8f8; font-family: 'Mukta', sans-serif;}
+.link-wrapper .title {cursor: pointer; margin-bottom: 16px;}
+.link-wrapper .lists-flex {display: flex; flex-wrap: wrap;}
+.link-wrapper .list {padding: 4px 0; cursor: pointer;}
+
+
 
 /******************** 반응형 *********************/
 @media screen and (max-width: 1399px) {
