@@ -107,6 +107,11 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .link-wrapper .cont-wrap .cnt {cursor: pointer; height: 0; transition: all 0.5s; overflow-y: hidden;}
 .link-wrapper > .link:hover .cnt {height: 20px;}
 
+/******************** .brand-wrapper.type-1 *********************/
+.brand-wrapper {position: relative; padding: 16px; display: flex;}
+.brand-wrapper .title-wrap {background-color: #eee;}
+
+
 
 /******************** 반응형 *********************/
 @media screen and (max-width: 1399px) {
