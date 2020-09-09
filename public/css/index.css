@@ -40,7 +40,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .x25 {flex: calc(25% - 32px) 0 0; margin: 16px;}
 
 .cover {position: relative;}
-.cover::before {content: ""; display: block; position: absolute; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3); transition: all 1s;}
+.cover::before {content: ""; display: block; position: absolute; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3); transition: all 0.5s;}
 .cover:hover::before {background-color: rgba(0, 0, 0, 0.1);}
 .cover.cover-dark:hover::before {background-color: rgba(0, 0, 0, 0.5);}
 
@@ -112,12 +112,16 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 /******************** .brand-wrapper.type-1 *********************/
 .brand-wrapper {position: relative; padding: 16px; display: flex;}
 .brand-wrapper .title-wrap {background-color: #eee;}
-.brand-wrapper .prd-wrap .prd {}
-.brand-wrapper .prd-wrap .prd.prd-stage {position: relative;}
-.brand-wrapper .prd-wrap .prd.prd-stage .list {width: 100%; height: 100%; position: absolute; border: 1px solid red; background-position: left center; background-repeat: no-repeat; display: none;}
-.brand-wrapper .prd-wrap .prd.prd-stage .list:nth-child(1) {background-image: url(../img/lx-1.jpg); display: block;}
-.brand-wrapper .prd-wrap .prd.prd-stage .list:nth-child(2) {background-image: url(../img/lx-2.jpg);}
-.brand-wrapper .prd-wrap .prd.prd-stage .list:nth-child(3) {background-image: url(../img/lx-3.jpg);}
+.brand-wrapper .prd {}
+.brand-wrapper .prd.prd-stage {position: relative;}
+.brand-wrapper .prd.prd-stage > .sizer {opacity: 0;}
+.brand-wrapper .prd.prd-stage .list {width: 100%; height: 100%; position: absolute; border: 1px solid red; background-position: left center; background-repeat: no-repeat; top: 0; left: 0; transition: all 1s; z-index: 1; opacity: 0;}
+.brand-wrapper .prd.prd-stage .list.active {z-index: 2; opacity: 1;}
+.brand-wrapper .prd.prd-stage .list:nth-child(1) {background-image: url(../img/lx-1.jpg);}
+.brand-wrapper .prd.prd-stage .list:nth-child(2) {background-image: url(../img/lx-2.jpg);}
+.brand-wrapper .prd.prd-stage .list:nth-child(3) {background-image: url(../img/lx-3.jpg);}
+.brand-wrapper .prd.prd-stage .pager-wrap {position: absolute; z-index: 2; top: 32px; left: 32px; display: flex;}
+.brand-wrapper .prd.prd-stage .pager {width: 40px; margin: 0 4px; border: 1px solid #ccc;}
 
 
 
