@@ -5,6 +5,9 @@
 }, 5000); */
 
 /********************** 초기설정 *************************/
+new WOW({ offset: 200, animateClass: 'wow-ani' }).init();
+
+
 var headerListIdx = 0;
 var bannerInterval;
 
