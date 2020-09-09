@@ -97,10 +97,12 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .link-wrapper > .link:nth-child(6) {background: url(../img/home-5a.jpg) no-repeat left;}
 
 .link-wrapper .cont-wrap {position: absolute; left: 32px; bottom: 32px; color: #f8f8f8; font-family: 'Mukta', sans-serif;}
-.link-wrapper .title {cursor: pointer; margin-bottom: 16px;}
-.link-wrapper .lists-flex {display: flex; flex-wrap: wrap;}
-.link-wrapper .list {padding: 4px 0; cursor: pointer;}
-
+.link-wrapper .cont-wrap .title {cursor: pointer; margin-bottom: 16px;}
+.link-wrapper .cont-wrap .lists-flex {display: flex; flex-wrap: wrap;}
+.link-wrapper .cont-wrap .list {padding: 4px 0; cursor: pointer;}
+.link-wrapper .cont-wrap .list:hover {color: #ccc;}
+.link-wrapper .cont-wrap .cnt {cursor: pointer; height: 0; transition: all 0.5s; overflow-y: hidden;}
+.link-wrapper > .link:hover .cnt {height: 20px;}
 
 
 /******************** 반응형 *********************/
