@@ -53,3 +53,5 @@ $(window).scroll(onScroll);
 $(window).resize(onResize).trigger("resize");
 $(".header-wrapper").find(".list").hover(onListOver, onListLeave);
 bannerInterval = setInterval(onBannerInterval, 8000); 
+
+
