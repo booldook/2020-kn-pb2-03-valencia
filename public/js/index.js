@@ -97,3 +97,7 @@ bannerInterval = setInterval(onBannerInterval, 8000);
 $(".prd-stage").hover(onPrdOver, onPrdLeave);
 $(".prd-stage .pager").click(onPagerClick);
 
+$(".brand-wrapper .btn-wish").click(function(e){
+	e.preventDefault();
+	console.log("wish");
+});
