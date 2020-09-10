@@ -14,8 +14,8 @@ new WOW({ offset: 200, animateClass: 'wow-ani' }).init();
 var headerListIdx = 0;
 var bannerInterval;
 
-var prdListIdx = 0;
-var prdInterval;
+var prdListIdx = [];
+var prdInterval = [];
 
 var brandTitleWidth;
 
@@ -27,16 +27,16 @@ function headerBanner() {
 	$(".header-wrapper").find(".list").eq(headerListIdx).addClass("active");
 }
 
-function prdAni(idx) {
-	$(".prd-stage").find(".pager").removeClass("active");
-	$(".prd-stage").find(".pager").eq(idx).addClass("active");
+function prdAni(idx, n) {
+	$(".prd-stage").eq(n).find(".pager").removeClass("active");
+	$(".prd-stage").eq(n).find(".pager").eq(idx).addClass("active");
 	
-	$(".prd-stage").find(".list")
+	$(".prd-stage").eq(n).find(".list")
 	.css({"position": "absolute"})
 	.stop().animate({"opacity": 0}, 500, function(){
 		$(this).css({"display": "none"});
 	});
-	$(".prd-stage").find(".list").eq(idx)
+	$(".prd-stage").eq(n).find(".list").eq(idx)
 	.css({"position": "relative", "display": "block", "z-index": 2})
 	.stop().animate({"opacity": 1}, 500);
 }
@@ -86,15 +86,17 @@ function onBannerInterval() {
 }
 
 function onPrdOver() {
-	prdListIdx = 1;
-	prdInterval = setInterval(onPrdInterval, 4000);
-	prdAni(prdListIdx);
+	var n = $(this).index();
+	prdListIdx[n] = 1;
+	prdInterval[n] = setInterval(onPrdInterval, 4000, n);
+	prdAni(prdListIdx[n], n);
 }
 
 function onPrdLeave() {
-	prdListIdx = 0;
-	clearInterval(prdInterval);
-	prdAni(prdListIdx);
+	var n = $(this).index();
+	prdListIdx[n] = 0;
+	clearInterval(prdInterval[n]);
+	prdAni(prdListIdx[n], n);
 }
 
 function onPagerClick() {
@@ -104,10 +106,10 @@ function onPagerClick() {
 	prdInterval = setInterval(onPrdInterval, 4000);
 }
 
-function onPrdInterval(){
-	if(prdListIdx == 2) prdListIdx = 0;
-	else prdListIdx++;
-	prdAni(prdListIdx);
+function onPrdInterval(n){
+	if(prdListIdx[n] == 2) prdListIdx[n] = 0;
+	else prdListIdx[n]++;
+	prdAni(prdListIdx[n], n);
 }
 
 function onWishModalShow(e){
