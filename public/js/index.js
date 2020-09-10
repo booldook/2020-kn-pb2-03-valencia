@@ -88,6 +88,15 @@ function onPrdInterval(){
 	prdAni(prdListIdx);
 }
 
+function onWishModalShow(e){
+	e.preventDefault();
+	$(".modal-wish").css("display", "flex");
+}
+
+function onModalHide() {
+	$(".modal-wrapper").css("display", "none");
+}
+
 /********************** 이벤트등록 *************************/
 $(window).scroll(onScroll);
 $(window).resize(onResize).trigger("resize");
@@ -97,7 +106,9 @@ bannerInterval = setInterval(onBannerInterval, 8000);
 $(".prd-stage").hover(onPrdOver, onPrdLeave);
 $(".prd-stage .pager").click(onPagerClick);
 
-$(".brand-wrapper .btn-wish").click(function(e){
-	e.preventDefault();
-	console.log("wish");
-});
+$(".brand-wrapper .btn-wish").click(onWishModalShow);
+$(".modal-wrapper .btn-close, .modal-wrapper").click(onModalHide);
+$(".modal-wrap").click(function(e) { e.stopPropagation() });
+
+// $("자식", "부모") == $("부모").find("자식")
+// $(".modal-wrapper .btn-close", ".modal-wrapper").click(onModalHide); 

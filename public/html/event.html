@@ -22,13 +22,15 @@
 		</div>
 	</div>
 	<script>
-		$(".wrapper").click(function(){
+		$(".wrapper").click(function(e){
 			console.log(".wrapper 클릭!");
 		});
-		$(".wrap").click(function(){
+		$(".wrap").click(function(e){
+			e.stopPropagation();
 			console.log(".wrap 클릭!");
 		});
-		$(".cont").click(function(){
+		$(".cont").click(function(e){
+			e.stopPropagation();
 			console.log(".cont 클릭!");
 		});
 	</script>
