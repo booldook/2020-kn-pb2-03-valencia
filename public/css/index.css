@@ -11,11 +11,20 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .btn-eee {padding: 8px 16px; border: 1px solid #eee; background-color: #eee; color: #444; border-radius: 3px; font-size: 12px; font-weight: 500;}
 .btn-ghost {padding: 8px 16px; border: 1px solid #fff; background-color: transparent; font-size: 14px; font-weight: 500; color: #fff; animation-name: none; animation-duration: 0.3s;}
 .btn-ghost:hover {animation-name: btnGhost;}
+.btn-ghost.dark {border: 1px solid #111; color: #111;}
+.btn-ghost.dark:hover {animation-name: btnGhostDark;}
 @keyframes btnGhost {
 	0% {background-color: transparent; color: #fff;}
 	50% {background-color: #fff; color: #000;}
 	100% {background-color: transparent; color: #fff;}
 }
+@keyframes btnGhostDark {
+	0% {background-color: transparent; color: #111;}
+	50% {background-color: #111; color: #f8f8f8;}
+	100% {background-color: transparent; color: #111;}
+}
+.btn-ghost.bar::after {content: ""; }
+
 .hover-active, .hover-link, .hover-ani, .bar-infinity {cursor: pointer;}
 .hover-active::after, .hover-link::after, .hover-ani::after, .bar-infinity::after {display: block; content: ""; border-bottom:2px solid #fff;}
 .hover-active::after {transition: all 0.3s; transform-origin: right; transform: scaleX(1);}
@@ -132,8 +141,9 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .brand-wrapper .prd.prd-stage .list:nth-child(3) {background-image: url(../img/lx-3.jpg);}
 */
 .brand-wrapper .prd.prd-stage .pager-wrap {position: absolute; z-index: 10; top: 32px; left: 32px; display: flex;}
-.brand-wrapper .prd.prd-stage .pager {width: 40px; margin: 0 4px; border-top: 2px solid #aaa; padding: 4px 0; cursor: pointer;}
-.brand-wrapper .prd.prd-stage .pager.active {border-top: 2px solid #fff;}
+.brand-wrapper .prd.prd-stage .pager {width: 40px; margin: 0 4px;  padding: 10px 0; cursor: pointer;}
+.brand-wrapper .prd.prd-stage .pager::after {content: ""; display: block; border: 1px solid #aaa;}
+.brand-wrapper .prd.prd-stage .pager.active::after {border: 1px solid #fff;}
 
 .brand-wrapper .list .cont {color: #f8f8f8; position: absolute; left: 60px; bottom: 60px;}
 .brand-wrapper .list .bts {display: flex;}

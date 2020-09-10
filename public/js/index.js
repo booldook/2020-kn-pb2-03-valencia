@@ -4,6 +4,9 @@
 	clearInterval(interval);
 }, 5000); */
 
+// $("자식", "부모") == $("부모").find("자식")
+// $(".modal-wrapper .btn-close", ".modal-wrapper").click(onModalHide);
+
 /********************** 초기설정 *************************/
 new WOW({ offset: 200, animateClass: 'wow-ani' }).init();
 
@@ -91,6 +94,7 @@ function onPrdInterval(){
 function onWishModalShow(e){
 	e.preventDefault();
 	$(".modal-wish").css("display", "flex");
+	$(this).find("i").removeClass("far").addClass("fa");
 }
 
 function onModalHide() {
@@ -110,5 +114,4 @@ $(".brand-wrapper .btn-wish").click(onWishModalShow);
 $(".modal-wrapper .btn-close, .modal-wrapper").click(onModalHide);
 $(".modal-wrap").click(function(e) { e.stopPropagation() });
 
-// $("자식", "부모") == $("부모").find("자식")
-// $(".modal-wrapper .btn-close", ".modal-wrapper").click(onModalHide); 
+ 
