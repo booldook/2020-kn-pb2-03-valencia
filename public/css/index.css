@@ -126,9 +126,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .link-wrapper > .link:hover .cnt {height: 20px;}
 
 /******************** .brand-wrapper.type-1 *********************/
-.brand-wrapper {position: relative; padding: 16px; display: flex;}
-.brand-wrapper .title-wrap {background-color: #eee;}
-
+.brand-wrapper {position: relative; padding: 16px; display: flex; height: 2000px; border: 1px solid red;}
 .brand-wrapper .prd.prd-stage {position: relative; transition: all 1s;}
 .brand-wrapper .prd.prd-stage .list {position: absolute; top: 0; left: 0; opacity: 0; z-index: 1;}
 .brand-wrapper .prd.prd-stage .list:nth-child(1) {position: relative; opacity: 1; z-index: 2;}
@@ -157,7 +155,8 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .brand-wrapper .list .title {margin: 24px 0;}
 .brand-wrapper .list .price {font-size: 12px;}
 
-.brand-wrapper .title-wrap {padding: 36px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: #444; height: 100vh;}
+.brand-wrapper .title-wrapper {background-color: #eee; position: relative;}
+.brand-wrapper .title-wrap {padding: 36px; color: #444; position: absolute; width: 100%; bottom: calc(50vh - 158px);}
 .brand-wrapper .title-wrap h2.title {font-size: 36px; font-weight: 300; font-family: 'Poppins', sans-serif;}
 .brand-wrapper .title-wrap .cont {padding: 24px 0; font-family: 'Mukta', sans-serif;}
 

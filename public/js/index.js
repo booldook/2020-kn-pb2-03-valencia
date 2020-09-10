@@ -46,9 +46,16 @@ function onScroll() {
 	for(var i=0; i<$("section").length; i++) {
 		section[i] = $("section").eq(i).offset().top;
 	}
-	console.log(section, sct);
+	// console.log(section[1], sct);
 	if(sct > 10) $(".banner-frame").css("border-width", "32px");
 	else $(".banner-frame").css("border-width", 0);
+
+	if(section[1] <= sct && section[1] + $("section").eq(1).outerHeight() - $(window).outerHeight() > sct) {
+		$(".brand-wrapper .title-wrap").css("position", "fixed");
+	}
+	else {
+		$(".brand-wrapper .title-wrap").css("position", "absolute");
+	}
 }
 
 function onResize() {
