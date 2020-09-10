@@ -65,11 +65,7 @@ function onBannerInterval() {
 
 function onPrdOver() {
 	prdListIdx = 1;
-	prdInterval = setInterval(function(){
-		if(prdListIdx == 2) prdListIdx = 0;
-		else prdListIdx++;
-		prdAni(prdListIdx);
-	}, 4000);
+	prdInterval = setInterval(onPrdInterval, 4000);
 	prdAni(prdListIdx);
 }
 
@@ -81,6 +77,14 @@ function onPrdLeave() {
 
 function onPagerClick() {
 	prdListIdx = $(this).index();
+	prdAni(prdListIdx);
+	clearInterval(prdInterval);
+	prdInterval = setInterval(onPrdInterval, 4000);
+}
+
+function onPrdInterval(){
+	if(prdListIdx == 2) prdListIdx = 0;
+	else prdListIdx++;
 	prdAni(prdListIdx);
 }
 

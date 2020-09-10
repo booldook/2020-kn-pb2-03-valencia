@@ -112,7 +112,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 /******************** .brand-wrapper.type-1 *********************/
 .brand-wrapper {position: relative; padding: 16px; display: flex;}
 .brand-wrapper .title-wrap {background-color: #eee;}
-.brand-wrapper .prd {}
+
 .brand-wrapper .prd.prd-stage {position: relative; transition: all 1s;}
 .brand-wrapper .prd.prd-stage .list {position: absolute; top: 0; left: 0; opacity: 0; z-index: 1;}
 .brand-wrapper .prd.prd-stage .list:nth-child(1) {position: relative; opacity: 1; z-index: 2;}
@@ -129,6 +129,17 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .brand-wrapper .prd.prd-stage .pager-wrap {position: absolute; z-index: 10; top: 32px; left: 32px; display: flex;}
 .brand-wrapper .prd.prd-stage .pager {width: 40px; margin: 0 4px; border-top: 2px solid #aaa; padding: 4px 0; cursor: pointer;}
 .brand-wrapper .prd.prd-stage .pager.active {border-top: 2px solid #fff;}
+
+.brand-wrapper .list .cont {color: #f8f8f8; position: absolute; left: 60px; bottom: 60px;}
+.brand-wrapper .list .bts {display: flex;}
+.brand-wrapper .list a {font-size: 12px; font-weight: bold; margin-right: 30px; opacity: 0; transform: translateY(30px); transition: all 0.5s;}
+.brand-wrapper .list:hover a {opacity: 1; transform: translateY(0);}
+.brand-wrapper .list a:nth-child(1) {transition-delay: 0.2s;}
+.brand-wrapper .list a:nth-child(2) {transition-delay: 0.3s;}
+.brand-wrapper .list a:nth-child(3) {transition-delay: 0.4s;}
+.brand-wrapper .list .title {margin: 24px 0;}
+.brand-wrapper .list .price {font-size: 12px;}
+
 
 
 
