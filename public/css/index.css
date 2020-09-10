@@ -155,8 +155,8 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .brand-wrapper .list .title {margin: 24px 0;}
 .brand-wrapper .list .price {font-size: 12px;}
 
-.brand-wrapper .title-wrapper {background-color: #eee; position: relative;}
-.brand-wrapper .title-wrap {padding: 36px; color: #444; position: absolute; width: 100%; bottom: calc(50vh - 158px);}
+.brand-wrapper .title-wrapper {background-color: #eee; position: relative; border: 1px solid red;}
+.brand-wrapper .title-wrap {color: #444; position: absolute; padding: 36px; width: 100%; top: calc(50vh - 158px);}
 .brand-wrapper .title-wrap h2.title {font-size: 36px; font-weight: 300; font-family: 'Poppins', sans-serif;}
 .brand-wrapper .title-wrap .cont {padding: 24px 0; font-family: 'Mukta', sans-serif;}
 

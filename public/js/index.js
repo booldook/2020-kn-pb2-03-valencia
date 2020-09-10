@@ -50,11 +50,14 @@ function onScroll() {
 	if(sct > 10) $(".banner-frame").css("border-width", "32px");
 	else $(".banner-frame").css("border-width", 0);
 
-	if(section[1] <= sct && section[1] + $("section").eq(1).outerHeight() - $(window).outerHeight() > sct) {
-		$(".brand-wrapper .title-wrap").css("position", "fixed");
+	if(section[1] > sct) {
+		$(".brand-wrapper .title-wrap").css({"top": "calc(50vh - 158px)", "bottom": "auto", "width": "100%", "position": "absolute"});
+	}
+	else if(section[1] <= sct && section[1] + $("section").eq(1).outerHeight() - $(window).outerHeight() > sct) {
+		$(".brand-wrapper .title-wrap").css({"position": "fixed", "width": $(".brand-wrapper .title-wrapper").width() + "px"});
 	}
 	else {
-		$(".brand-wrapper .title-wrap").css("position", "absolute");
+		$(".brand-wrapper .title-wrap").css({"top": "auto", "bottom": "calc(50vh - 158px)", "width": "100%", "position": "absolute"});
 	}
 }
 
