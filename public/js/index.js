@@ -17,6 +17,8 @@ var bannerInterval;
 var prdListIdx = 0;
 var prdInterval;
 
+var brandTitleWidth;
+
 /********************** 사용자함수 *************************/
 function headerBanner() {
 	$(".header-wrapper").find(".banner").css({"opacity": 0, "transform": "scale(1.3)"});
@@ -50,11 +52,12 @@ function onScroll() {
 	if(sct > 10) $(".banner-frame").css("border-width", "32px");
 	else $(".banner-frame").css("border-width", 0);
 
+	
 	if(section[1] > sct) {
 		$(".brand-wrapper .title-wrap").css({"top": "calc(50vh - 158px)", "bottom": "auto", "width": "100%", "position": "absolute"});
 	}
 	else if(section[1] <= sct && section[1] + $("section").eq(1).outerHeight() - $(window).outerHeight() > sct) {
-		$(".brand-wrapper .title-wrap").css({"position": "fixed", "width": $(".brand-wrapper .title-wrapper").width() + "px"});
+		$(".brand-wrapper .title-wrap").css({"position": "fixed", "width": brandTitleWidth + "px"});
 	}
 	else {
 		$(".brand-wrapper .title-wrap").css({"top": "auto", "bottom": "calc(50vh - 158px)", "width": "100%", "position": "absolute"});
@@ -62,7 +65,8 @@ function onScroll() {
 }
 
 function onResize() {
-	
+	brandTitleWidth = $(".brand-wrapper .title-wrapper").width();
+	$(".brand-wrapper .title-wrap").css({"width": brandTitleWidth + "px"});
 }
 
 function onListOver() {

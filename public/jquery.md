@@ -43,3 +43,10 @@
 ## 함수/메서드
 
 ## 제어문(if), 반복문(for)
+
+
+# 3. jQuery Plugins
+- [cycle2](http://jquery.malsup.com/cycle2/) <- 매니아만...
+- [bxslider](https://bxslider.com/)
+- [slick](https://kenwheeler.github.io/slick/)
+- [swiper](https://swiperjs.com//)

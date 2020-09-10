@@ -127,6 +127,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 
 /******************** .brand-wrapper.type-1 *********************/
 .brand-wrapper {position: relative; padding: 16px; display: flex; height: 2000px; border: 1px solid red;}
+.brand-wrapper .prd-wrap {flex-shrink: 1;}
 .brand-wrapper .prd.prd-stage {position: relative; transition: all 1s;}
 .brand-wrapper .prd.prd-stage .list {position: absolute; top: 0; left: 0; opacity: 0; z-index: 1;}
 .brand-wrapper .prd.prd-stage .list:nth-child(1) {position: relative; opacity: 1; z-index: 2;}
@@ -155,7 +156,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .brand-wrapper .list .title {margin: 24px 0;}
 .brand-wrapper .list .price {font-size: 12px;}
 
-.brand-wrapper .title-wrapper {background-color: #eee; position: relative; border: 1px solid red;}
+.brand-wrapper .title-wrapper {background-color: #eee; position: relative; border: 1px solid red; min-width: 300px;}
 .brand-wrapper .title-wrap {color: #444; position: absolute; padding: 36px; width: 100%; top: calc(50vh - 158px);}
 .brand-wrapper .title-wrap h2.title {font-size: 36px; font-weight: 300; font-family: 'Poppins', sans-serif;}
 .brand-wrapper .title-wrap .cont {padding: 24px 0; font-family: 'Mukta', sans-serif;}
@@ -192,7 +193,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 	.x75 {flex: calc(100% - 32px) 0 0;}
 	.x50 {flex: calc(100% - 32px) 0 0;}
 	.x25 {flex: calc(50% - 32px) 0 0;}
-	.title-wrap.x25 {display: none;}
+	.title-wrapper.x25 {display: none;}
 }
 
 @media screen and (max-width: 767px) {
