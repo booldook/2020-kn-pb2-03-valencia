@@ -23,7 +23,9 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 	50% {background-color: #111; color: #f8f8f8;}
 	100% {background-color: transparent; color: #111;}
 }
-.btn-ghost.bar::after {content: ""; }
+.btn-ghost.bar {display: flex; align-items: center;}
+.btn-ghost.bar:hover::after {transform: scaleX(0.5);}
+.btn-ghost.bar::after {content: ""; display: block; width: 24px; border-top: 1px solid #222; margin-left: 12px; transition: all 0.5s; transition-delay: 0.3s;}
 
 .hover-active, .hover-link, .hover-ani, .bar-infinity {cursor: pointer;}
 .hover-active::after, .hover-link::after, .hover-ani::after, .bar-infinity::after {display: block; content: ""; border-bottom:2px solid #fff;}
@@ -154,6 +156,10 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .brand-wrapper .list a:nth-child(3) {transition-delay: 0.4s;}
 .brand-wrapper .list .title {margin: 24px 0;}
 .brand-wrapper .list .price {font-size: 12px;}
+
+.brand-wrapper .title-wrap {padding: 36px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: #444; height: 100vh;}
+.brand-wrapper .title-wrap h2.title {font-size: 36px; font-weight: 300; font-family: 'Poppins', sans-serif;}
+.brand-wrapper .title-wrap .cont {padding: 24px 0; font-family: 'Mukta', sans-serif;}
 
 
 /******************** Wish Modal *********************/

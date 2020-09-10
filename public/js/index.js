@@ -42,6 +42,11 @@ function prdAni(idx) {
 /********************** 이벤트콜백 *************************/
 function onScroll() {
 	var sct = $(this).scrollTop();
+	var section = [];
+	for(var i=0; i<$("section").length; i++) {
+		section[i] = $("section").eq(i).offset().top;
+	}
+	console.log(section, sct);
 	if(sct > 10) $(".banner-frame").css("border-width", "32px");
 	else $(".banner-frame").css("border-width", 0);
 }
