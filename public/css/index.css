@@ -51,9 +51,9 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .x25 {flex: calc(25% - 32px) 0 0; margin: 16px;}
 
 .cover {position: relative;}
-.cover::before {content: ""; display: block; position: absolute; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3); transition: all 0.5s;}
-.cover:hover::before {background-color: rgba(0, 0, 0, 0.1);}
-.cover.cover-dark:hover::before {background-color: rgba(0, 0, 0, 0.5);}
+.cover::after {content: ""; display: block; position: absolute; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3); transition: all 0.5s; top: 0; left: 0;}
+.cover:hover::after {background-color: rgba(0, 0, 0, 0.1);}
+.cover.cover-dark:hover::after {background-color: rgba(0, 0, 0, 0.5);}
 
 .modal-wrapper {width: 100%; height: 100vh; position: fixed; left: 0; top: 0; background-color: rgba(0,0,0,0.6); z-index: 9999; display: none; justify-content: center; align-items: center;}
 .modal-wrap {padding: 40px 80px; background-color: #fff;}
@@ -176,10 +176,11 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 @media screen and (max-width: 1399px) {
 	.header-wrapper .top-lt .navi-wrap {display: none;}
 	.header-wrapper .top-lt .fa-bars {display: block;}
+	.x33 {flex: calc(50% - 32px) 0 0;}
 }
 
 @media screen and (max-width: 1199px) {
-	
+	.x33 {flex: calc(100% - 32px) 0 0;}
 } 
 
 @media screen and (max-width: 991px) {
@@ -202,7 +203,6 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 	.header-wrapper .top-rt .btn-ghost {display: none;}
 	.header-wrapper .sns-wrap .bar {display: none;}
 	.header-wrapper .sns-wrap .hover-link {margin-left: 32px;}
-	.x33 {flex: calc(100% - 32px) 0 0;}
 	.x25 {flex: calc(100% - 32px) 0 0;}
 }
 
