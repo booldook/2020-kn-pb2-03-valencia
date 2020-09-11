@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 /* font-family: 'Poppins', sans-serif; */
 
-/******************** 공통사항 *********************/
+/** 공통사항 *********************/
 html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height: 5000px;}
 
 .wow-ani {animation-duration: 1s;}
@@ -60,7 +60,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 
 
 
-/******************** .header *********************/
+/** .header *********************/
 .header-wrapper {width: 100%; height: 100vh; position: relative; background-color: black; overflow: hidden; color: #fff;}
 .header-wrapper .banner-wrap {position: absolute; width: 100%; height: 100%; opacity: .6;}
 .header-wrapper .banner-wrap .banner {position: absolute; width: 100%; height: 100%; top: 0; left: 0; 
@@ -69,14 +69,15 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .header-wrapper .banner-wrap .banner:nth-child(2) {background-image: url(../img/img-2.jpg);}
 .header-wrapper .banner-wrap .banner:nth-child(3) {background-image: url(../img/img-3a.jpg);}
 .header-wrapper .banner-wrap .banner:nth-child(4) {background-image: url(../img/img-4.jpg);}
-.header-wrapper .cont-wrap {position: absolute; width: 100%; height: 100%; top: 0; left: 0; padding: 50px 70px;}
 .header-wrapper .banner-frame {position: absolute; width: 100%; height: 100%; top: 0; left: 0; border-color: #fff; border-style: solid; border-width: 0; transition: border-width 0.75s;}
+
+.header-wrapper .cont-wrap {position: absolute; width: 100%; height: 100%; top: 0; left: 0; padding: 50px 70px;}
 
 .header-wrapper .top-wrap {display: flex; justify-content: space-between; font-family: 'Mukta', sans-serif;  font-weight: 500; letter-spacing: -1;}
 .header-wrapper .top-lt {display: flex; align-items: center;}
 .header-wrapper .top-lt .navi-wrap {display: flex; margin-left: 20px; align-items: center;}
 .header-wrapper .top-lt .navi-wrap .navi {margin: 16px; cursor: pointer;}
-.header-wrapper .top-lt .navi-wrap .divide {border-left: 1px solid #ccc; margin: 0 20px; height: 16px;}
+.header-wrapper .top-lt .navi-wrap .divide {border-left: 1px solid #ccc; margin: -2px 20px 0 20px; height: 14px;}
 .header-wrapper .top-lt .fa-bars {font-size: 24px; display: none; cursor: pointer; margin-left: 24px;}
 .header-wrapper .top-rt {display: flex; align-items: center;}
 .header-wrapper .top-rt .icon {font-size: 24px; padding: 16px;}
@@ -107,7 +108,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .header-wrapper .sns-wrap .hover-link .fa {margin-right: 12px;}
 .header-wrapper .sns-wrap .icon-scroll {position: absolute; right: 0; bottom: 0; font-size: 12px; transform: rotate(-90deg); transform-origin: bottom left;}
 
-/******************** .list-wrapper *********************/
+/** .list-wrapper *********************/
 .link-wrapper {display: flex; flex-wrap: wrap; padding: 16px; margin-top: -32px;}
 .link-wrapper > .link {height: 440px;}
 .link-wrapper > .link:nth-child(1) {background: url(../img/home-1a.jpg) no-repeat left;}
@@ -125,7 +126,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .link-wrapper .cont-wrap .cnt {cursor: pointer; height: 0; transition: all 0.5s; overflow-y: hidden;}
 .link-wrapper > .link:hover .cnt {height: 20px;}
 
-/******************** .brand-wrapper.type-1 *********************/
+/** .brand-wrapper.type-1 *********************/
 .brand-wrapper {position: relative; padding: 16px; display: flex;}
 .brand-wrapper .prd-wrap {flex-shrink: 1; display: flex; flex-wrap: wrap;}
 .brand-wrapper .prd.prd-stage {position: relative; transition: all 1s;}
@@ -156,14 +157,14 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .brand-wrapper .list .title {margin: 24px 0;}
 .brand-wrapper .list .price {font-size: 12px;}
 
-.brand-wrapper .title-wrapper {background-color: #eee; position: relative; min-width: 300px;}
+.brand-wrapper .title-wrapper {background-color: #eee; position: relative; min-width: 300px; top: 16px;}
 .brand-wrapper .title-wrap {color: #444; position: absolute; padding: 36px; width: 100%; top: calc(50vh - 158px);}
 .brand-wrapper .prd-wrap > :first-child h2.title {font-size: 36px; font-weight: 300; font-family: 'Poppins', sans-serif;}
 .brand-wrapper .prd-wrap > :not(:first-child) h2.title {font-size: 14px; font-weight: 300; font-family: 'Poppins', sans-serif;}
 .brand-wrapper .title-wrap .cont {padding: 24px 0; font-family: 'Mukta', sans-serif;}
 
 
-/******************** Wish Modal *********************/
+/** Wish Modal *********************/
 .modal-wish {text-align: center; color: #333; font-size: 14px;}
 .modal-wish .title {padding: 12px 0;}
 .modal-wish .title-sm {color: #777; padding: 12px;}
@@ -171,7 +172,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .modal-wish .btn-close {font-weight: bold; padding: 6px; cursor: pointer;}
 
 
-/******************** 반응형 *********************/
+/** 반응형 *********************/
 @media screen and (max-width: 1399px) {
 	.header-wrapper .top-lt .navi-wrap {display: none;}
 	.header-wrapper .top-lt .fa-bars {display: block;}

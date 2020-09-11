@@ -8,7 +8,7 @@
 // $(".modal-wrapper .btn-close", ".modal-wrapper").click(onModalHide);
 
 /********************** 초기설정 *************************/
-new WOW({ offset: 200, animateClass: 'wow-ani' }).init();
+new WOW({ offset: 200, animateClass: 'wow-ani', mobile: false }).init();
 
 
 var headerListIdx = 0;
@@ -49,17 +49,21 @@ function onScroll() {
 		section[i] = $("section").eq(i).offset().top;
 	}
 	// console.log(section[1], sct);
-	if(sct > 10) $(".banner-frame").css("border-width", "32px");
+
+	// header-banner 프레임 애니메이션
+	if(sct > 0) $(".banner-frame").css("border-width", "32px");
 	else $(".banner-frame").css("border-width", 0);
 
 	
 	if(section[1] > sct) {
+		$(".brand-wrapper .title-wrapper").css("top", "16px");
 		$(".brand-wrapper .title-wrap").css({"top": "calc(50vh - 158px)", "bottom": "auto", "width": "100%", "position": "absolute"});
 	}
 	else if(section[1] <= sct && section[1] + $("section").eq(1).outerHeight() - $(window).outerHeight() > sct) {
 		$(".brand-wrapper .title-wrap").css({"position": "fixed", "width": brandTitleWidth + "px"});
 	}
 	else {
+		$(".brand-wrapper .title-wrapper").css("top", "-16px");
 		$(".brand-wrapper .title-wrap").css({"top": "auto", "bottom": "calc(50vh - 158px)", "width": "100%", "position": "absolute"});
 	}
 }
