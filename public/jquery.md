@@ -26,7 +26,7 @@
 - fadeIn(), fadeOut(), fadeToggle()
 - animate()
 
-## 크기/위치(Diemesion)
+## 크기/위치(Dimension)
 - width(), height(), innerWidth(), innerHeight(), outerWidth(), outerHeight(), outerWidth(true), outerHeight(true)
 - ![jq-dim.gif](https://booldook-cdn.web.app/md/jq-dim.gif)
 - position()
