@@ -14,8 +14,10 @@ new WOW({ offset: 200, animateClass: 'wow-ani', mobile: false }).init();
 var headerListIdx = 0;
 var bannerInterval;
 
-var prdListIdx = [];
-var prdInterval = [];
+var prdIdx;					// 상품의 idx - 상품에 hover할때만 변한다.
+var prdLastIdx;			// 상품의 이미지의 마지막 idx값(length-1) - 상품에 hover할때만 변한다.
+var prdListIdx;			// 상품에서 이미지의 idx - Interval, pagerclick, 상품에 hover(1), leave(0)
+var prdInterval;		// 상품의 Animation 간격
 
 var brandTitleWidth;
 
@@ -27,18 +29,14 @@ function headerBanner() {
 	$(".header-wrapper").find(".list").eq(headerListIdx).addClass("active");
 }
 
-function prdAni(idx, n) {
-	$(".prd-stage").eq(n).find(".pager").removeClass("active");
-	$(".prd-stage").eq(n).find(".pager").eq(idx).addClass("active");
+function prdAni() {
+	$(".prd-stage").eq(prdIdx).find(".pager").removeClass("active");
+	$(".prd-stage").eq(prdIdx).find(".pager").eq(prdListIdx).addClass("active");
 	
-	$(".prd-stage").eq(n).find(".list")
-	.css({"position": "absolute"})
-	.stop().animate({"opacity": 0}, 500, function(){
+	$(".prd-stage").eq(prdIdx).find(".list").css({"position": "absolute"}).stop().animate({"opacity": 0}, 500, function(){
 		$(this).css({"display": "none"});
 	});
-	$(".prd-stage").eq(n).find(".list").eq(idx)
-	.css({"position": "relative", "display": "block", "z-index": 2})
-	.stop().animate({"opacity": 1}, 500);
+	$(".prd-stage").eq(prdIdx).find(".list").eq(prdListIdx).css({"position": "relative", "display": "block"}).stop().animate({"opacity": 1}, 500);
 }
 
 /********************** 이벤트콜백 *************************/
@@ -90,30 +88,30 @@ function onBannerInterval() {
 }
 
 function onPrdOver() {
-	var n = $(this).index();
-	prdListIdx[n] = 1;
-	prdInterval[n] = setInterval(onPrdInterval, 4000, n);
-	prdAni(prdListIdx[n], n);
+	prdIdx = $(this).index();
+	prdLastIdx = $(this).find(".list").length - 1;
+	prdListIdx = 1;
+	prdInterval = setInterval(onPrdInterval, 4000);
+	prdAni();
 }
 
 function onPrdLeave() {
-	var n = $(this).index();
-	prdListIdx[n] = 0;
-	clearInterval(prdInterval[n]);
-	prdAni(prdListIdx[n], n);
+	prdListIdx = 0;
+	clearInterval(prdInterval);
+	prdAni();
 }
 
 function onPagerClick() {
 	prdListIdx = $(this).index();
-	prdAni(prdListIdx);
+	prdAni();
 	clearInterval(prdInterval);
 	prdInterval = setInterval(onPrdInterval, 4000);
 }
 
-function onPrdInterval(n){
-	if(prdListIdx[n] == 2) prdListIdx[n] = 0;
-	else prdListIdx[n]++;
-	prdAni(prdListIdx[n], n);
+function onPrdInterval(){
+	if(prdListIdx == prdLastIdx) prdListIdx = 0;
+	else prdListIdx++;
+	prdAni();
 }
 
 function onWishModalShow(e){
