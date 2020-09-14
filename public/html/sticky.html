@@ -10,9 +10,9 @@
 		.page {height: 100vh;}
 		.page.prd-wrapper {height: auto; display: flex; justify-content: space-between;}
 		.prd-wrap {border: 10px solid red; flex: 60% 0 0; display: flex; flex-wrap: wrap;}
-		.prd-title {background-color: #555; flex: 30% 0 0; top: 0; left: 0;}
+		.prd-title {background-color: #555; flex: 30% 0 0; display: flex;}
 		.box {flex: calc(50% - 32px) 0 0; height: 400px; margin: 16px; border: 10px solid orange;}
-		.prd-title .title {height: 100vh; display: flex; align-items: center; border: 1px solid red;}
+		.prd-title .title {width: 100%; height: 100vh; display: flex; align-items: center; border: 1px solid red; top: 0;}
 	</style>
 	<script src="../js/jquery-3.5.1.min.js"></script>
 </head>
@@ -54,21 +54,22 @@
 			winSct = $(this).scrollTop();
 			console.log(winWid, winHei, winSct, pageTop);
 			if(winSct < pageTop[1]) {
-				$(".prd-title").css({"position": "static"});
+				$(".prd-title").css({"align-items": "flex-start"});
+				$(".prd-title .title").css({"position": "static"});
 			}
 			else if(winSct >= pageTop[1] && winSct < pageTop[2] - winHei) {
-				$(".prd-title").css({"position": "fixed", "width": titleWid+"px", "left": titleLt+"px"});
+				$(".prd-title .title").css({"position": "fixed", "width": titleWid+"px"});
 			}
 			else {
-				$(".prd-title").css({"position": "static"});
+				$(".prd-title").css({"align-items": "flex-end"});
+				$(".prd-title .title").css({"position": "static"});
 			}
 		}
 		function onPageSet() {
 			for(var i=0; i<$(".page").length; i++) {
 				pageTop[i] = $(".page").eq(i).offset().top;
 			}
-			titleWid = $(".prd-title h1.title").outerWidth();
-			titleLt = $(".prd-title h1.title").offset().left;
+			titleWid = $(".prd-title").outerWidth();
 		}
 	</script>
 </body>
