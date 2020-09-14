@@ -130,7 +130,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .brand-wrapper {position: relative; padding: 16px; display: flex;}
 .brand-wrapper .prd-wrap {flex-shrink: 1; display: flex; flex-wrap: wrap;}
 .brand-wrapper .prd.prd-stage {position: relative; transition: all 1s;}
-.brand-wrapper .prd.prd-stage .list {position: absolute; top: 0; left: 0; opacity: 0; z-index: 1;}
+.brand-wrapper .prd.prd-stage .list {position: absolute; top: 0; left: 0; opacity: 0; z-index: 1; width: 100%;}
 .brand-wrapper .prd.prd-stage .list:nth-child(1) {position: relative; opacity: 1; z-index: 2;}
 .brand-wrapper .prd.prd-stage .list:nth-child(2) {display: none;}
 .brand-wrapper .prd.prd-stage .list:nth-child(3) {display: none;}
@@ -147,7 +147,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .brand-wrapper .prd.prd-stage .pager::after {content: ""; display: block; border: 1px solid #aaa;}
 .brand-wrapper .prd.prd-stage .pager.active::after {border: 1px solid #fff;}
 
-.brand-wrapper .list .cont {color: #f8f8f8; position: absolute; left: 60px; bottom: 60px;}
+.brand-wrapper .list .cont {color: #f8f8f8; position: absolute;}
 .brand-wrapper .list .bts {display: flex;}
 .brand-wrapper .list a {font-size: 12px; font-weight: bold; margin-right: 30px; opacity: 0; transform: translateY(30px); transition: all 0.5s;}
 .brand-wrapper .list:hover a {opacity: 1; transform: translateY(0);}
@@ -155,13 +155,16 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .brand-wrapper .list a:nth-child(2) {transition-delay: 0.3s;}
 .brand-wrapper .list a:nth-child(3) {transition-delay: 0.4s;}
 .brand-wrapper .list .title {margin: 24px 0;}
-.brand-wrapper .list .price {font-size: 12px;}
+.brand-wrapper .list .price {font-size: 16px; display: flex; align-items: center;}
+.brand-wrapper .list .price .price-ori {text-decoration: line-through; margin-right: 16px;}
+.brand-wrapper .list .price .price-cnt {background-color: red; color: #fff; margin-left: 16px; padding: 4px; font-family: 'Poppins', sans-serif; font-size: 12px;}
 
 .brand-wrapper .title-wrapper {background-color: #eee; position: relative; min-width: 300px; top: 16px;}
 .brand-wrapper .title-wrap {color: #444; position: absolute; padding: 36px; width: 100%; top: calc(50vh - 158px);}
+.brand-wrapper .prd-wrap > :first-child .cont {padding: 24px 0; font-family: 'Mukta', sans-serif; left: 60px; bottom: 60px;}
+.brand-wrapper .prd-wrap > :not(:first-child) .cont {padding: 12px 0; font-family: 'Mukta', sans-serif; left: 24px; bottom: 24px;}
 .brand-wrapper .prd-wrap > :first-child h2.title {font-size: 36px; font-weight: 300; font-family: 'Poppins', sans-serif;}
-.brand-wrapper .prd-wrap > :not(:first-child) h2.title {font-size: 14px; font-weight: 300; font-family: 'Poppins', sans-serif;}
-.brand-wrapper .title-wrap .cont {padding: 24px 0; font-family: 'Mukta', sans-serif;}
+.brand-wrapper .prd-wrap > :not(:first-child) h2.title {font-size: 16px; font-weight: 400; font-family: 'Poppins', sans-serif;}
 
 
 /** Wish Modal *********************/
@@ -177,10 +180,15 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 	.header-wrapper .top-lt .navi-wrap {display: none;}
 	.header-wrapper .top-lt .fa-bars {display: block;}
 	.x33 {flex: calc(50% - 32px) 0 0;}
+	.brand-wrapper .prd-wrap > :first-child h2.title {font-size: 20px;}
+	.brand-wrapper .prd-wrap > :not(:first-child) h2.title {font-size: 20px;}
+	.brand-wrapper .prd-wrap > :first-child .cont {left: 24px; bottom: 24px;}
 }
 
 @media screen and (max-width: 1199px) {
 	.x33 {flex: calc(100% - 32px) 0 0;}
+	.brand-wrapper .prd-wrap > :first-child h2.title {font-size: 24px;}
+	.brand-wrapper .prd-wrap > :not(:first-child) h2.title {font-size: 24px;}
 } 
 
 @media screen and (max-width: 991px) {
@@ -196,7 +204,8 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 	.x75 {flex: calc(100% - 32px) 0 0;}
 	.x50 {flex: calc(100% - 32px) 0 0;}
 	.x25 {flex: calc(50% - 32px) 0 0;}
-	.title-wrapper.x25 {display: none;}
+	.brand-wrapper {padding: 0;}
+	.brand-wrapper .title-wrapper.x25 {display: none;}
 }
 
 @media screen and (max-width: 767px) {
@@ -204,6 +213,10 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 	.header-wrapper .sns-wrap .bar {display: none;}
 	.header-wrapper .sns-wrap .hover-link {margin-left: 32px;}
 	.x25 {flex: calc(100% - 32px) 0 0;}
+	.brand-wrapper .prd-wrap > .prd:first-child {display: none;}
+	.brand-wrapper .prd-wrap > :first-child h2.title {font-size: 20px;}
+	.brand-wrapper .prd-wrap > :not(:first-child) h2.title {font-size: 20px;}
+	.brand-wrapper .prd-wrap > :first-child .cont {left: 12px; bottom: 12px;}
 }
 
 @media screen and (max-width: 575px) {
