@@ -6,7 +6,11 @@
 	<title>Slide</title>
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<style>
-
+		.wrapper {max-width: 1200px; margin: auto;}
+		.stage {width: 100%; border: 10px solid red;}
+		.slide-wrap {position: relative;}
+		.slide {position: absolute; top: 0; left: 0; width: 100%;}
+		.slide:nth-child(1) {position: relative; z-index: 1;}
 	</style>
 	<script src="../js/jquery-3.5.1.min.js"></script>
 </head>
@@ -15,22 +19,36 @@
 		<div class="stage">
 			<div class="slide-wrap">
 				<div class="slide">
-					<img src="../img/slide-0.jpg" class="img">
+					<img src="../img/slide-0.jpg" class="w-100">
 				</div>
 				<div class="slide">
-					<img src="../img/slide-1.jpg" class="img">
+					<img src="../img/slide-1.jpg" class="w-100">
 				</div>
 				<div class="slide">
-					<img src="../img/slide-2.jpg" class="img">
+					<img src="../img/slide-2.jpg" class="w-100">
 				</div>
 				<div class="slide">
-					<img src="../img/slide-3.jpg" class="img">
+					<img src="../img/slide-3.jpg" class="w-100">
 				</div>
 			</div>
 		</div>
+		<div class="text-center">
+			<span class="btn-prev">prev</span>
+			<span style="padding: 0 12px;">|</span>
+			<span class="btn-next">next</span>
+		</div>
 	</div>
 	<script>
+		var $slides = $(".slide");
+		$(".slide").remove();
+		
+		var idx = 0;
 
+		function init() {
+			$($slides.eq(idx)).appendTo(".slide-wrap");
+			$($slides.eq(idx+1)).appendTo(".slide-wrap").css({"left": "100%"});
+		}
+		init();
 	</script>
 </body>
 </html>
