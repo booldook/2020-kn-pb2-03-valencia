@@ -14,6 +14,9 @@ new WOW({ offset: 200, animateClass: 'wow-ani', mobile: false }).init();
 var headerListIdx = 0;
 var bannerInterval;
 
+var winWid;
+var winHei;
+
 var prdIdx;					// 상품의 idx - 상품에 hover할때만 변한다.
 var prdLastIdx;			// 상품의 이미지의 마지막 idx값(length-1) - 상품에 hover할때만 변한다.
 var prdListIdx;			// 상품에서 이미지의 idx - Interval, pagerclick, 상품에 hover(1), leave(0)
@@ -52,23 +55,30 @@ function onScroll() {
 	if(sct > 0) $(".banner-frame").css("border-width", "32px");
 	else $(".banner-frame").css("border-width", 0);
 
-	
-	if(section[1] > sct) {
-		$(".brand-wrapper .title-wrapper").css("top", "16px");
-		$(".brand-wrapper .title-wrap").css({"top": "calc(50vh - 158px)", "bottom": "auto", "width": "100%", "position": "absolute"});
-	}
-	else if(section[1] <= sct && section[1] + $("section").eq(1).outerHeight() - $(window).outerHeight() > sct) {
-		$(".brand-wrapper .title-wrap").css({"position": "fixed", "width": brandTitleWidth + "px"});
+	if(winWid > 991) {
+		if(section[1] > sct) {
+			$(".brand-wrapper .title-wrapper").css("top", "16px");
+			$(".brand-wrapper .title-wrap").css({"top": "calc(50vh - 158px)", "bottom": "auto", "width": "100%", "position": "absolute"});
+		}
+		else if(section[1] <= sct && section[1] + $("section").eq(1).outerHeight() - $(window).outerHeight() > sct) {
+			$(".brand-wrapper .title-wrap").css({"position": "fixed", "width": brandTitleWidth + "px"});
+		}
+		else {
+			$(".brand-wrapper .title-wrapper").css("top", "-16px");
+			$(".brand-wrapper .title-wrap").css({"top": "auto", "bottom": "calc(50vh - 158px)", "width": "100%", "position": "absolute"});
+		}
 	}
 	else {
-		$(".brand-wrapper .title-wrapper").css("top", "-16px");
-		$(".brand-wrapper .title-wrap").css({"top": "auto", "bottom": "calc(50vh - 158px)", "width": "100%", "position": "absolute"});
+		$(".brand-wrapper .title-wrap").css({"position": "static"});
+		$(".brand-wrapper .title-wrap").css({"width": "100%"});
 	}
 }
 
 function onResize() {
+	winWid = $(this).outerWidth();
+	winHei = $(this).outerHeight();
 	brandTitleWidth = $(".brand-wrapper .title-wrapper").width();
-	$(".brand-wrapper .title-wrap").css({"width": brandTitleWidth + "px"});
+	$(this).trigger("scroll");
 }
 
 function onListOver() {
