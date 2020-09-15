@@ -128,6 +128,19 @@
 		{ id: 5, src: '../img/lx-2-1.jpg', title: '쇼파5' },
 		{ id: 6, src: '../img/lx-2-2.jpg', title: '쇼파6' },
 		{ id: 7, src: '../img/lx-3-0.jpg', title: '의자1' },
-		{ id: 8, src: '../img/lx-3-1.jpg', title: '의자2' }
-	]
+		{ id: 8, src: '../img/lx-3-1.jpg', title: '의자2' },
+		{ id: 9, src: '../img/lx-3-2.jpg', title: '의자3' }
+	];
+	var $slideWrap = $(".wrapper5 .slide-wrap");
+
+	function init() {
+		for(var i in slides) {
+			html = '<div class="slide" style="left:'+(i*100)+'%;">';
+			html += '<img class="w-100" src="'+slides[i].src+'">';
+			html += '</div>';
+			$slideWrap.append(html);
+		}
+	}
+
+	init();
 })();
