@@ -46,9 +46,10 @@ html, body {height: 10000px;}
 .wrapper5 .stage {width: 100%; border: 10px solid red; position: relative; /* overflow: hidden; */}
 .wrapper5 .slide-wrap {position: relative;}
 .wrapper5 .slide {position: absolute; top: 0; width: 100%;}
+.wrapper5 .slide > h1 {position: absolute; width: 100%; height: 100%; top: 0; left: 0; font-size: 10vw; display: flex; justify-content: center; align-items: center; color: #fff;}
 .wrapper5 .slide:first-child {position: relative;}
-.wrapper5 .btn-prev, .wrapper5 .btn-next {font-size: 15vw; color: #fff; text-shadow: 0 0 2vw rgba(0,0,0,0.5); position: absolute; z-index: 9; top: calc(50% - 11vw); opacity: .1; transition: opacity 1s;}
-.wrapper5 .btn-prev {display: none;}
+.wrapper5 .btn-prev, .wrapper5 .btn-next {font-size: 10vw; color: #fff; text-shadow: 0 0 2vw rgba(0,0,0,0.5); position: absolute; z-index: 9; top: calc(50% - 8vw); opacity: .1; transition: opacity 1s;}
+.wrapper5 .btn-prev {}
 .wrapper5 .btn-next {right: 0;}
-.wrapper5 .btn-prev:hover, .wrapper4 .btn-next:hover {opacity: .7;}
+.wrapper5 .btn-prev:hover, .wrapper5 .btn-next:hover {opacity: .7;}
 
