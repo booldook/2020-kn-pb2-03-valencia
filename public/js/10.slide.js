@@ -37,29 +37,37 @@
 
 // 시험장 prev, next
 (function(){
+	var $slideWrap = $(".wrapper3 .slide-wrap");
+	var $pagerSpan = $(".wrapper3 .pager-wrap span");
+	var $btnPrev = $(".wrapper3 .btn-prev");
+	var $btnNext = $(".wrapper3 .btn-next");
 	var n = 0;
-	$(".wrapper3 .btn-prev").click(onPrev);
-	$(".wrapper3 .btn-next").click(onNext);
+
+	$btnPrev.click(onPrev);
+	$btnNext.click(onNext);
+	
 	function onPrev() {
 		if(n > 0) n--;
 		ani();
+		pagerToggle();
 	}
 	function onNext() {
 		if(n < 3) n++;
 		ani();
+		pagerToggle();
 	}
 	function ani() {
-		$(".wrapper3 .slide-wrap").stop().animate({"left": -n*100 + "%"}, 500, pagerToggle);
+		$slideWrap.stop().animate({"left": -n*100 + "%"}, 500);
 	}
 	function pagerToggle(){
-		$(".wrapper3 .pager-wrap").find("span").show();
+		$pagerSpan.show();
 		if(n == 0) {
-			$(".wrapper3 .pager-wrap").find("span").eq(0).hide();
-			$(".wrapper3 .pager-wrap").find("span").eq(1).hide();
+			$pagerSpan.eq(0).hide();
+			$pagerSpan.eq(1).hide();
 		}
 		if(n == 3) {
-			$(".wrapper3 .pager-wrap").find("span").eq(1).hide();
-			$(".wrapper3 .pager-wrap").find("span").eq(2).hide();
+			$pagerSpan.eq(1).hide();
+			$pagerSpan.eq(2).hide();
 		}
 	}
 	pagerToggle();
