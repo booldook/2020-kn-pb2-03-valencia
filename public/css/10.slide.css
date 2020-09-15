@@ -43,7 +43,7 @@ html, body {height: 10000px;}
 .wrapper4 .btn-prev:hover, .wrapper4 .btn-next:hover {opacity: .7;}
 
 .wrapper.wrapper5 {max-width: 600px;}
-.wrapper5 .stage {width: 100%; border: 10px solid red; position: relative; /* overflow: hidden; */}
+.wrapper5 .stage {width: 100%; position: relative; overflow: hidden;}
 .wrapper5 .slide-wrap {position: relative;}
 .wrapper5 .slide {position: absolute; top: 0; width: 100%;}
 .wrapper5 .slide > h1 {position: absolute; width: 100%; height: 100%; top: 0; left: 0; font-size: 10vw; display: flex; justify-content: center; align-items: center; color: #fff;}

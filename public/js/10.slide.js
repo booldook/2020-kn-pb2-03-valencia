@@ -137,6 +137,7 @@
 	var $btnNext = $(".wrapper5 .btn-next");
 	var $slides = [];
 	var idx = 0;
+	var target;
 	var lastIdx = slides.length - 1;
 	var interval;
 
@@ -152,6 +153,7 @@
 	}
 
 	function slideInit() {
+		$slideWrap.css("left", 0);
 		//가운데(나)
 		$slideWrap.html($slides[idx].clone());
 		//좌측(prev)
@@ -162,24 +164,29 @@
 		else $slideWrap.append($slides[idx + 1].clone());
 	}
 
-	/*
 	$btnPrev.click(onPrev);
 	$btnNext.click(onNext);
-	interval = setInterval(onNext, 3000);
-	$slideStage.mouseover(onHover);
-	$slideStage.mouseleave(onLeave);
-
 	function onPrev() {
-		if(idx == 0) idx = lastIdx;
-		else idx--;
+		target = '100%';
+		idx = (idx == 0) ? lastIdx : idx - 1;
 		ani();
 	}
 
 	function onNext() {
-		if(idx == lastIdx) idx = 0;
-		else idx++;
+		target = '-100%';
+		idx = (idx == lastIdx) ? 0 : idx + 1;
 		ani();
 	}
+
+	function ani() {
+		$slideWrap.stop().animate({"left": target}, 500, slideInit);
+	}
+
+	/*
+	interval = setInterval(onNext, 3000);
+	$slideStage.mouseover(onHover);
+	$slideStage.mouseleave(onLeave);
+
 
 	function onHover() {
 		clearInterval(interval);
@@ -189,9 +196,7 @@
 		interval = setInterval(onNext, 3000);
 	}
 
-	function ani() {
-		$slideWrap.stop().animate({"left": -idx*100+"%"}, 500);
-	}
+	
 
 	function pagerToggle() {
 
