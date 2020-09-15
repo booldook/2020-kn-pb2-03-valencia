@@ -121,21 +121,21 @@
 // wrapper5 생성, prev/next, interval
 (function(){
 	var slides = [
-		{ id: 1, src: '../img/lx-1-0.jpg', title: '침대1' },
-		{ id: 2, src: '../img/lx-1-1.jpg', title: '침대2' },
-		{ id: 3, src: '../img/lx-1-2.jpg', title: '침대3' },
-		/* { id: 4, src: '../img/lx-2-0.jpg', title: '쇼파4' },
-		{ id: 5, src: '../img/lx-2-1.jpg', title: '쇼파5' },
-		{ id: 6, src: '../img/lx-2-2.jpg', title: '쇼파6' },
-		{ id: 7, src: '../img/lx-3-0.jpg', title: '의자1' },
-		{ id: 8, src: '../img/lx-3-1.jpg', title: '의자2' },
-		{ id: 9, src: '../img/lx-3-2.jpg', title: '의자3' } */
+		{ id: 0, src: '../img/lx-1-0.jpg', title: '침대1' },
+		{ id: 1, src: '../img/lx-1-1.jpg', title: '침대2' },
+		{ id: 2, src: '../img/lx-1-2.jpg', title: '침대3' },
+		{ id: 3, src: '../img/lx-2-0.jpg', title: '쇼파4' },
+		{ id: 4, src: '../img/lx-2-1.jpg', title: '쇼파5' },
+		{ id: 5, src: '../img/lx-2-2.jpg', title: '쇼파6' },
+		{ id: 6, src: '../img/lx-3-0.jpg', title: '의자1' },
+		{ id: 7, src: '../img/lx-3-1.jpg', title: '의자2' },
+		{ id: 8, src: '../img/lx-3-2.jpg', title: '의자3' }
 	];
 	var $slideStage = $(".wrapper5 .stage");
 	var $slideWrap = $(".wrapper5 .slide-wrap");
 	var $btnPrev = $(".wrapper5 .btn-prev");
 	var $btnNext = $(".wrapper5 .btn-next");
-	var $slide = [];
+	var $slides = [];
 	var idx = 0;
 	var lastIdx = slides.length - 1;
 	var interval;
@@ -146,12 +146,23 @@
 			html += '<img class="w-100" src="'+slides[i].src+'">';
 			html += '<h1>'+i+'</h1>';
 			html += '</div>';
-			$slide[i] = $(html);
+			$slides[i] = $(html);
 		}
-		console.log($slide);
-		$slideWrap.append($slide[0]);
+		slideInit();
 	}
 
+	function slideInit() {
+		//가운데(나)
+		$slideWrap.html($slides[idx].clone());
+		//좌측(prev)
+		if(idx == 0) $slideWrap.prepend($slides[lastIdx].clone());
+		else $slideWrap.prepend($slides[idx - 1].clone());
+		//우측(next)
+		if(idx == lastIdx) $slideWrap.append($slides[0].clone());
+		else $slideWrap.append($slides[idx + 1].clone());
+	}
+
+	/*
 	$btnPrev.click(onPrev);
 	$btnNext.click(onNext);
 	interval = setInterval(onNext, 3000);
@@ -185,6 +196,6 @@
 	function pagerToggle() {
 
 	}
-
+	*/
 	init();
 })();
