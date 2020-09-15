@@ -5,17 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Slide</title>
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<style>
-		.wrapper {max-width: 1200px; margin: auto;}
-		.stage {width: 100%; border: 10px solid red;}
-		.slide-wrap {position: relative;}
-		.slide {position: absolute; top: 0; left: 0; width: 100%;}
-		.slide:nth-child(1) {position: relative; z-index: 1;}
-	</style>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/10.slide.css">
 	<script src="../js/jquery-3.5.1.min.js"></script>
+	<script src="../js/imagesloaded.pkgd.min.js"></script>
 </head>
 <body>
-	<div class="wrapper">
+
+	<!-- slide 1 -->
+	<div class="wrapper wrapper1">
 		<div class="stage">
 			<div class="slide-wrap">
 				<div class="slide">
@@ -30,6 +28,9 @@
 				<div class="slide">
 					<img src="../img/slide-3.jpg" class="w-100">
 				</div>
+				<div class="slide">
+					<img src="../img/slide-0.jpg" class="w-100">
+				</div>
 			</div>
 		</div>
 		<div class="text-center">
@@ -38,17 +39,8 @@
 			<span class="btn-next">next</span>
 		</div>
 	</div>
-	<script>
-		var $slides = $(".slide");
-		$(".slide").remove();
-		
-		var idx = 0;
+	<!--// slide 1 -->
 
-		function init() {
-			$($slides.eq(idx)).appendTo(".slide-wrap");
-			$($slides.eq(idx+1)).appendTo(".slide-wrap").css({"left": "100%"});
-		}
-		init();
-	</script>
+	<script src="../js/10.slide.js"></script>
 </body>
 </html>
