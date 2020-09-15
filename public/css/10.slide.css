@@ -1,5 +1,6 @@
+html, body {height: 10000px;}
 .wrapper {max-width: 1200px; margin: 50px auto;}
-.btn-prev, .btn-next {cursor: pointer;}
+.btn-prev, .btn-next {cursor: pointer; user-select: none;}
 
 .wrapper1 .stage {width: 100%; border: 10px solid red; overflow: hidden;}
 .wrapper1 .slide-wrap {position: relative;}
@@ -18,4 +19,13 @@
 .wrapper2 .slide:nth-child(3) {left: 200%;}
 .wrapper2 .slide:nth-child(4) {left: 300%;}
 .wrapper2 .slide:nth-child(5) {left: 400%;}
+
+.wrapper3 .stage {width: 100%; border: 10px solid red; overflow: hidden;}
+.wrapper3 .slide-wrap {position: relative;}
+.wrapper3 .slide {position: absolute; top: 0; width: 100%;}
+.wrapper3 .slide:nth-child(1) {position: relative; left: 0;}
+.wrapper3 .slide:nth-child(2) {left: 100%;}
+.wrapper3 .slide:nth-child(3) {left: 200%;}
+.wrapper3 .slide:nth-child(4) {left: 300%;}
+.wrapper3 .slide:nth-child(5) {left: 400%;}
 
