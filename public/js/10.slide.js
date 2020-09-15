@@ -45,20 +45,21 @@
 
 	$btnPrev.click(onPrev);
 	$btnNext.click(onNext);
-	
+
 	function onPrev() {
 		if(n > 0) n--;
 		ani();
-		pagerToggle();
+		//pagerToggle();
 	}
 	function onNext() {
 		if(n < 3) n++;
 		ani();
-		pagerToggle();
+		//pagerToggle();
 	}
 	function ani() {
 		$slideWrap.stop().animate({"left": -n*100 + "%"}, 500);
 	}
+	/*
 	function pagerToggle(){
 		$pagerSpan.show();
 		if(n == 0) {
@@ -71,6 +72,48 @@
 		}
 	}
 	pagerToggle();
+	*/
 })();
 
+// pager prev, next
+(function(){
+	var $slideWrap = $(".wrapper4 .slide-wrap");
+	var $slide = $(".wrapper4 .slide");
+	var $btnPrev = $(".wrapper4 .btn-prev");
+	var $btnNext = $(".wrapper4 .btn-next");
+	var n = 0;
+	var last = $slide.length - 1;
+	var speed = 500;
 
+	$btnPrev.click(onPrev);
+	$btnNext.click(onNext);
+
+	function onPrev() {
+		n--;
+		ani();
+		pagerToggle();
+	}
+	function onNext() {
+		n++;
+		ani();
+		pagerToggle();
+	}
+
+	function ani() {
+		$slideWrap.stop().animate({"left": -n*100 +"%"}, speed);
+	}
+	function pagerToggle() {
+		if(n == 0) {
+			$btnPrev.hide();
+			$btnNext.show();
+		}
+		else if(n == last) {
+			$btnPrev.show();
+			$btnNext.hide();
+		}
+		else {
+			$btnPrev.show();
+			$btnNext.show();
+		}
+	}
+})();
