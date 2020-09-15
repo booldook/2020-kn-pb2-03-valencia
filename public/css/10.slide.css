@@ -42,3 +42,12 @@ html, body {height: 10000px;}
 .wrapper4 .btn-next {right: 0;}
 .wrapper4 .btn-prev:hover, .wrapper4 .btn-next:hover {opacity: .7;}
 
+.wrapper.wrapper5 {max-width: 600px;}
+.wrapper5 .stage {width: 100%; border: 10px solid red; position: relative; overflow: hidden;}
+.wrapper5 .slide-wrap {position: relative;}
+.wrapper5 .slide {position: absolute; top: 0; width: 100%;}
+.wrapper5 .btn-prev, .wrapper4 .btn-next {font-size: 15vw; color: #fff; text-shadow: 0 0 2vw rgba(0,0,0,0.5); position: absolute; z-index: 9; top: calc(50% - 11vw); opacity: .1; transition: opacity 1s;}
+.wrapper5 .btn-prev {display: none;}
+.wrapper5 .btn-next {right: 0;}
+.wrapper5 .btn-prev:hover, .wrapper4 .btn-next:hover {opacity: .7;}
+

@@ -117,3 +117,17 @@
 		}
 	}
 })();
+
+// wrapper5 생성, prev/next, interval
+(function(){
+	var slides = [
+		{ id: 1, src: '../img/lx-1-0.jpg', title: '침대1' },
+		{ id: 2, src: '../img/lx-1-1.jpg', title: '침대2' },
+		{ id: 3, src: '../img/lx-1-2.jpg', title: '침대3' },
+		{ id: 4, src: '../img/lx-2-0.jpg', title: '쇼파4' },
+		{ id: 5, src: '../img/lx-2-1.jpg', title: '쇼파5' },
+		{ id: 6, src: '../img/lx-2-2.jpg', title: '쇼파6' },
+		{ id: 7, src: '../img/lx-3-0.jpg', title: '의자1' },
+		{ id: 8, src: '../img/lx-3-1.jpg', title: '의자2' }
+	]
+})();
