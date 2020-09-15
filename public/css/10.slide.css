@@ -1,7 +1,7 @@
-.wrapper {max-width: 1200px; margin: auto;}
+.wrapper {max-width: 1200px; margin: 50px auto;}
 .btn-prev, .btn-next {cursor: pointer;}
 
-.wrapper1 .stage {width: 100%; border: 10px solid red; overflow: hidden;}
+.wrapper1 .stage {width: 100%; border: 10px solid red; /* overflow: hidden; */}
 .wrapper1 .slide-wrap {position: relative;}
 .wrapper1 .slide {position: absolute; top: 0; width: 100%;}
 .wrapper1 .slide:nth-child(1) {position: relative; left: 0;}
@@ -9,4 +9,13 @@
 .wrapper1 .slide:nth-child(3) {left: 200%;}
 .wrapper1 .slide:nth-child(4) {left: 300%;}
 .wrapper1 .slide:nth-child(5) {left: 400%;}
+
+.wrapper2 .stage {width: 100%; border: 10px solid red; /* overflow: hidden; */}
+.wrapper2 .slide-wrap {position: relative;}
+.wrapper2 .slide {position: absolute; top: 0; width: 100%;}
+.wrapper2 .slide:nth-child(1) {position: relative; left: 0;}
+.wrapper2 .slide:nth-child(2) {left: 100%;}
+.wrapper2 .slide:nth-child(3) {left: 200%;}
+.wrapper2 .slide:nth-child(4) {left: 300%;}
+.wrapper2 .slide:nth-child(5) {left: 400%;}
 

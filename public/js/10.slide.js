@@ -1,11 +1,13 @@
 var n = 1;
 function ani() {
-	$(".slide-wrap").stop().animate({"left": -n*100 + "%"}, 500, function(){
+	$(".wrapper2 .slide-wrap").stop().animate({"left": -n*100 + "%"}, 500, function(){
 		if(n == 4) {
-			n = 1;
 			$(this).css("left", 0);
+			n = 1;
 		}
-		else n++;
+		else {
+			n++;
+		}
 	});
 }
 
