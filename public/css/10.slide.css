@@ -54,4 +54,7 @@ html, body {height: 10000px;}
 .wrapper5 .btn-prev {}
 .wrapper5 .btn-next {right: 0;}
 .wrapper5 .btn-prev:hover, .wrapper5 .btn-next:hover {opacity: .7;}
+.wrapper5 .pager-wrap {position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); user-select: none;}
+.wrapper5 .pager {font-size: 30px; color: #fff; cursor: pointer;}
+.wrapper5 .pager.active {color: crimson;}
 
