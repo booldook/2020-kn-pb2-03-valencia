@@ -195,12 +195,14 @@
 		if(oldIdx < idx) { //next
 			$slide.eq(2).remove();
 			$slideWrap.append($slides[idx].clone());
-			
+			target = '-100%';
+			ani();
 		}
 		if(oldIdx > idx) { //prev
 			$slide.eq(0).remove();
 			$slideWrap.prepend($slides[idx].clone());
-			
+			target = '100%';
+			ani();
 		}
 	}
 
