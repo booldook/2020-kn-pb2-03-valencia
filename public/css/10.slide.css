@@ -58,3 +58,16 @@ html, body {height: 10000px;}
 .wrapper5 .pager {font-size: 30px; color: #fff; cursor: pointer;}
 .wrapper5 .pager.active {color: crimson;}
 
+
+
+.wrapper6 .stage {width: 100%; position: relative; overflow: hidden;}
+.wrapper6 .slide-wrap {position: relative;}
+.wrapper6 .slide > h1 {position: absolute; width: 100%; height: 100%; top: 0; left: 0; font-size: 10vw; display: flex; justify-content: center; align-items: center; color: #fff;}
+.wrapper6 .slide:nth-child(2) {position: absolute; top: 0; left: 0; opacity: 0;}
+.wrapper6 .btn-prev, .wrapper6 .btn-next {font-size: 10vw; color: #fff; text-shadow: 0 0 2vw rgba(0,0,0,0.5); position: absolute; z-index: 9; top: calc(50% - 8vw); opacity: .1; transition: opacity 1s;}
+.wrapper6 .btn-next {right: 0;}
+.wrapper6 .btn-prev:hover, .wrapper6 .btn-next:hover {opacity: .7;}
+.wrapper6 .pager-wrap {position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); user-select: none;}
+.wrapper6 .pager {font-size: 30px; color: #fff; cursor: pointer;}
+.wrapper6 .pager.active {color: crimson;}
+
