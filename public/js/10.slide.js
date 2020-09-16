@@ -261,14 +261,18 @@
 		}
 		$pager = $pagerWrap.find(".pager");
 		$pager.click(onPagerClick).eq(idx).addClass("active");
+		slideInit();
+		interval = setInterval(onNext, 3000);
+	}
+
+	function slideInit() {
 		$slideWrap.html($slides[idx].clone());
-		// interval = setInterval(onNext, 3000);
 	}
 
 	$btnPrev.click(onPrev);
 	$btnNext.click(onNext);
-	//$slideStage.mouseover(onHover);
-	//$slideStage.mouseleave(onLeave);
+	$slideStage.mouseover(onHover);
+	$slideStage.mouseleave(onLeave);
 
 	function onHover() {
 		clearInterval(interval);
@@ -289,26 +293,13 @@
 	}
 
 	function onPagerClick() {
-		// 클릭된 페이저에 따라 idx, slide를 바꾼다.
-		var oldIdx = idx;
 		idx = $(this).index();
-		if(oldIdx < idx) { //next
-			$slide.eq(2).remove();
-			$slideWrap.append($slides[idx].clone());
-			target = '-100%';
-			ani();
-		}
-		if(oldIdx > idx) { //prev
-			$slide.eq(0).remove();
-			$slideWrap.prepend($slides[idx].clone());
-			target = '100%';
-			ani();
-		}
+		ani();
 	}
 
 	function ani() {
 		$pager.removeClass("active").eq(idx).addClass("active");
-		$($slides[idx].clone()).appendTo($slideWrap).stop().animate({"opacity": 1}, 500);
+		$($slides[idx].clone()).appendTo($slideWrap).stop().animate({"opacity": 1}, 500, slideInit);
 	}
 	init();
 })();
