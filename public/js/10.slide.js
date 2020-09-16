@@ -390,3 +390,49 @@
 	}
 	init();
 })();
+
+// wrapper8 - 상품슬라이드
+(function(){
+	/*********** 전역변수 선언 ***********/
+	var datas = [
+		{ id: 0, src: '../img/lx-1-0.jpg', title: '침대1' },
+		{ id: 1, src: '../img/lx-1-1.jpg', title: '침대2' },
+		{ id: 2, src: '../img/lx-1-2.jpg', title: '침대3' },
+		{ id: 3, src: '../img/lx-2-0.jpg', title: '쇼파4' },
+		{ id: 4, src: '../img/lx-2-1.jpg', title: '쇼파5' },
+		{ id: 5, src: '../img/lx-2-2.jpg', title: '쇼파6' },
+		{ id: 6, src: '../img/lx-3-0.jpg', title: '의자1' },
+		{ id: 7, src: '../img/lx-3-1.jpg', title: '의자2' },
+		{ id: 8, src: '../img/lx-3-2.jpg', title: '의자3' },
+		{ id: 9, src: '../img/lx-6-0.jpg', title: '쇼파1' },
+		{ id: 10, src: '../img/lx-6-1.jpg', title: '쇼파2' },
+		{ id: 11, src: '../img/lx-6-2.jpg', title: '쇼파3' },
+	];
+
+	var $wrapper = $(".wrapper8");
+	var $slideWrap = $(".slide-wrap", $wrapper); 
+	var $btnPrev = $(".btn-prev", $wrapper); 
+	var $btnNext = $(".btn-next", $wrapper);
+	var $slides = [];
+	var idx = 0;
+
+	/*********** 사용자 함수 ***********/
+	init();
+	function init() {
+		var i, html;
+		for(i in datas) {
+			html  = '<div class="slide">';
+			html += '<img src="'+datas[i].src+'" class="w-100">';
+			html += '<h1>'+i+'</h1>';
+			html += '</div>';
+			$slides.push($(html));
+		}
+		console.log($slides);
+	}
+
+	
+	/*********** 이벤트 콜백 ***********/
+	
+	
+	/*********** 이벤트 등록 ***********/
+})();
