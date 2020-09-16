@@ -329,6 +329,7 @@
 			html = '<div class="slide">';
 			html += '<img class="w-100" src="'+slides[i].src+'">';
 			html += '<h1>'+i+'</h1>';
+			html += '<div class="title">'+slides[i].title+'</div>';
 			html += '</div>';
 			$slides[i] = $(html);
 			html = '<span class="pager">●</span>';
@@ -341,7 +342,11 @@
 	}
 
 	function slideInit() {
-		$slideWrap.html($slides[idx].clone());
+		//$slideWrap.html($slides[idx].clone());
+		var $my = $($slides[idx].clone()).appendTo($slideWrap.empty());
+		$my.find(".title").css("opacity");
+		$my.find(".title").css("transform");
+		$my.find(".title").css({"opacity": 1, "transform": "translateX(0)"});
 	}
 
 	$btnPrev.click(onPrev);
@@ -375,11 +380,12 @@
 	function ani() {
 		$pager.removeClass("active").eq(idx).addClass("active");
 		$slideWrap.append($slides[idx].clone());
-
-		$slideWrap.find(".slide").eq(0).css({"opacity": 0, "transform": "scale(1.3)"});
-		$slideWrap.find(".slide").eq(1).css("opacity");
-		$slideWrap.find(".slide").eq(1).css("transform");
-		$slideWrap.find(".slide").eq(1).css({"opacity": 1, "transform": "scale(1)"});
+		var $slide0 = $slideWrap.find(".slide").eq(0);
+		var $slide1 = $slideWrap.find(".slide").eq(1);
+		$slide0.css({"opacity": 0, "transform": "scale(1.3)"});
+		$slide1.css("opacity");
+		$slide1.css("transform");
+		$slide1.css({"opacity": 1, "transform": "scale(1)"});
 		setTimeout(slideInit, 500);
 	}
 	init();
