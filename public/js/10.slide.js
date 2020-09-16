@@ -413,8 +413,11 @@
 	var $slideWrap = $(".slide-wrap", $wrapper); 
 	var $btnPrev = $(".btn-prev", $wrapper); 
 	var $btnNext = $(".btn-next", $wrapper);
-	var $slides = [];
+	var $slides = [];		// 모든 .slide
 	var idx = 0;
+	var lastIdx = datas.length - 1;
+	var winWid;					// 현재창의 크기
+	var target;
 
 	/*********** 사용자 함수 ***********/
 	init();
@@ -427,12 +430,42 @@
 			html += '</div>';
 			$slides.push($(html));
 		}
-		console.log($slides);
+		slideInit();
 	}
 
-	
+	function slideInit() {
+		$($slides[idx].clone()).appendTo($slideWrap.empty().attr("style", ""));
+		if(idx == 0) $($slides[lastIdx].clone()).prependTo($slideWrap);
+		else $($slides[idx - 1].clone()).prependTo($slideWrap);
+		for(var i=1; i<=4; i++) {
+			if(idx + i > lastIdx) $($slides[idx + i - 1 - lastIdx].clone()).appendTo($slideWrap);
+			else $($slides[idx + i].clone()).appendTo($slideWrap);
+		}
+	}
+
+	function ani() {
+		$slideWrap.stop().animate({"left": target+"%"}, 500, slideInit);
+	}
+
 	/*********** 이벤트 콜백 ***********/
+	function onPrev() {
+		idx = idx == 0 ? lastIdx : idx - 1;
+		target = 0;
+		ani();
+	}
 	
-	
+	function onNext() {
+		idx = idx == lastIdx ? 0 : idx + 1;
+		winWid = $(window).outerWidth();
+		if(winWid < 576) target = -200;
+		else if(winWid < 768) target = -100;
+		else if(winWid < 992) target = -66.6666;
+		else target = -50;
+		ani();
+	}
+
 	/*********** 이벤트 등록 ***********/
+	$btnPrev.click(onPrev);
+	$btnNext.click(onNext);
+
 })();

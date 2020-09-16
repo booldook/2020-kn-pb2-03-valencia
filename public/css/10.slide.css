@@ -87,7 +87,8 @@ html, body {height: 10000px;}
 
 .wrapper8 .stage {width: 90%; margin: auto; position: relative; overflow: hidden; /* border: 10px solid blue; */}
 .wrapper8 .slide-wrap {position: relative; display: flex; width: 150%; left: -25%;}
-.wrapper8 .slide {position: relative; flex: 16.6666% 0 0;}
+.wrapper8 .slide {position: relative; flex: 16.6666% 0 0; padding: 8px;}
+.wrapper8 .slide img {border: 1px solid #bbb;}
 
 .wrapper8 .btn-prev, .wrapper8 .btn-next {font-size: 8vw; color: purple; text-shadow: 0 0 2vw rgba(0,0,0,0.5); position: absolute; z-index: 9; top: calc(50% - 6vw); opacity: .1; transition: opacity 1s;}
 .wrapper8 .btn-prev {left: -0.5vw;}
