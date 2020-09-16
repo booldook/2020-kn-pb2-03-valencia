@@ -418,6 +418,7 @@
 	var lastIdx = datas.length - 1;
 	var winWid;					// 현재창의 크기
 	var target;
+	var interval;
 
 	/*********** 사용자 함수 ***********/
 	init();
@@ -431,9 +432,14 @@
 			$slides.push($(html));
 		}
 		slideInit();
+		interval = setInterval(onNext, 3000);
 	}
 
 	function slideInit() {
+		// $btnPrev.show();
+		// $btnNext.show();
+		$btnPrev.off("click").click(onPrev);
+		$btnNext.off("click").click(onNext);
 		$($slides[idx].clone()).appendTo($slideWrap.empty().attr("style", ""));
 		if(idx == 0) $($slides[lastIdx].clone()).prependTo($slideWrap);
 		else $($slides[idx - 1].clone()).prependTo($slideWrap);
@@ -449,12 +455,16 @@
 
 	/*********** 이벤트 콜백 ***********/
 	function onPrev() {
+		// $(this).hide();
+		$(this).off("click");
 		idx = idx == 0 ? lastIdx : idx - 1;
 		target = 0;
 		ani();
 	}
 	
 	function onNext() {
+		// $(this).hide();
+		$(this).off("click");
 		idx = idx == lastIdx ? 0 : idx + 1;
 		winWid = $(window).outerWidth();
 		if(winWid < 576) target = -200;
@@ -465,7 +475,10 @@
 	}
 
 	/*********** 이벤트 등록 ***********/
-	$btnPrev.click(onPrev);
-	$btnNext.click(onNext);
+	$wrapper.hover(function(){
+		clearInterval(interval);
+	}, function(){
+		interval = setInterval(onNext, 3000);
+	});
 
 })();
