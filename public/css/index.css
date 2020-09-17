@@ -76,9 +76,13 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .header-wrapper .top-wrap {display: flex; justify-content: space-between; font-family: 'Mukta', sans-serif;  font-weight: 500; letter-spacing: -1;}
 .header-wrapper .top-lt {display: flex; align-items: center;}
 .header-wrapper .top-lt .navi-wrap {display: flex; margin-left: 20px; align-items: center;}
-.header-wrapper .top-lt .navi-wrap .navi {margin: 16px; cursor: pointer;}
+.header-wrapper .top-lt .navi-wrap .navi {margin: 16px; cursor: pointer; position: relative;}
 .header-wrapper .top-lt .navi-wrap .divide {border-left: 1px solid #ccc; margin: -2px 20px 0 20px; height: 14px;}
 .header-wrapper .top-lt .fa-bars {font-size: 24px; display: none; cursor: pointer; margin-left: 24px;}
+
+.header-wrapper .navi-page .sub-wrap {padding: 48px; background-color: #f1f1f1; display: flex; position: absolute; width: 600px; color: #111; left: calc(50% - 300px);}
+.header-wrapper .navi-page .sub-wrap ul {flex: 50% 0 0;}
+
 .header-wrapper .top-rt {display: flex; align-items: center;}
 .header-wrapper .top-rt .icon {font-size: 24px; padding: 16px;}
 .header-wrapper .top-rt .tel-wrap {display: flex; flex-direction: column; align-items: flex-end; padding-left: 16px;}
