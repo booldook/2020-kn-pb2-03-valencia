@@ -39,7 +39,7 @@
 	padding:4px 16px 8px 16px;}
 .top-lt {display: flex; align-items: center;}
 .top-lt .navi-wrap {display: flex; margin-left: 20px; align-items: center;}
-.top-lt .navi-wrap .navi {margin: 16px; cursor: pointer;}
+.top-lt .navi-wrap .navi {margin: 16px; cursor: pointer; position: relative;}
 .top-lt .navi-wrap .divide {border-left: 1px solid #ccc; margin: -2px 20px 0 20px; height: 14px;}
 .top-lt .fa-bars {font-size: 24px; display: none; cursor: pointer; margin-left: 24px;}
 .top-rt {display: flex; align-items: center;}
@@ -50,7 +50,7 @@
 .top-rt .fa-phone-volume {display: none;}
 .top-rt .btn-ghost {margin-left: 32px;}
 
-
+.sub-wrap {position: absolute; background-color: #222; padding: 32px; width: 250px; height: 250px; font-size: 50px; display: none;}
 
 
 
