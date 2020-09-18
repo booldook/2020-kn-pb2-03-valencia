@@ -4,7 +4,7 @@
 /* font-family: 'Poppins', sans-serif; */
 
 /** 공통사항 *********************/
-html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height: 5000px;}
+html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height: 20000px;}
 
 .wow-ani {animation-duration: 1s;}
 
@@ -189,8 +189,15 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .type-slide .title-wrapper {border: 1px solid red; position: absolute; width: 90%; left: 5%; bottom: 8%; display: flex; justify-content: space-between; align-items: flex-start; color: #fff;}
 .type-slide .title-lt > .title-wrap:not(:first-child) {display: none;}
 .type-slide .title-lt .bts {display: flex;}
-.type-slide .title-wrapper .pager-wrap {user-select: none;}
-.type-slide .pager {font-size: 30px; color: #fff; cursor: pointer;}
+.type-slide .title-lt .title {font-size: 24px;}
+.type-slide .title-rt {display: flex; flex-direction: column; align-items: flex-end;}
+.type-slide .title-rt .title {font-size: 48px;}
+.type-slide .title-rt .title2 {font-size: 14px; font-weight: normal; margin-bottom: 24px;}
+.type-slide .title-rt .btn-ghost {border: none;}
+.type-slide .title-rt .btn-ghost.bar::after {border-color: #fff;}
+.type-slide .title-wrapper .pager-wrap {user-select: none; display: flex; margin-top: 30px;}
+.type-slide .pager {width: 26px; height: 26px; border: none; border-radius: 50%; display: flex; justify-content: center; cursor: pointer; font-size: 40px; font-family: san-serif; line-height: 18px;}
+.type-slide .pager.active {border: 1px solid #fff; font-size: 20px; line-height: 20px;}
 
 
 
@@ -235,6 +242,8 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 	.brand-wrapper > .prd-wrapper {order: 2;}
 	.brand-wrapper > .title-wrapper {order: 1; width: calc(100% - 64px); margin-top: 64px; margin-bottom: 0;}
 	.brand-wrapper .prd-wrapper > .prd:first-child {display: none;}
+	.type-slide .title-wrapper {width: 94%; left: 3%; bottom: 5%; flex-direction: column; justify-content: flex-end;}
+	.type-slide .title-rt {align-items: flex-start;}
 }
 
 @media screen and (max-width: 767px) {
