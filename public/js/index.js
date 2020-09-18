@@ -207,4 +207,68 @@ $(".type-1 .btn-wish").click(onWishModalShow);
 $(".modal-wrapper .btn-close, .modal-wrapper").click(onModalHide);
 $(".modal-wrap").click(function(e) { e.stopPropagation() });
 
+/********************** 슬라이드 *************************/
+(function(){
+	var $stage = $(".type-slide .stage");
+	var $wrapper = $(".type-slide .slide-wrapper");
+	var $slides = $(".type-slide .slide");
+	var $titleLt = $(".type-slide .title-lt"); 
+	var $titles = $(".type-slide .title-lt .title-wrap");
+	var $pagerWrap = $(".type-slide .pager-wrap");
+	var bg = ['../img/slide-0.jpg','../img/slide-1.jpg','../img/slide-2.jpg','../img/slide-3.jpg'];
+	var idx = 0;
+	var lastIdx = $slides.length - 1;
+	var interval;
+	init();
+	
+	function init() {
+		for(var i=0; i<$slides.length; i++) {
+			$pagerWrap.append('<div class="pager">·</div>');
+		}
+		$pagerWrap.find(".pager").click(onClick);
+		interval = setInterval(onInterval, 3000);
+		$stage.mouseenter(onEnter).mouseleave(onLeave);
+		slideInit();
+	}
+
+	function slideInit() {
+		$wrapper.empty();
+		$(".type-slide .title-lt .title-wrap").remove();
+		$($($slides[idx]).clone()).appendTo($wrapper).css("background-image", "url("+bg[idx]+")");
+		$($($titles[idx]).clone()).prependTo($titleLt);
+		$(".type-slide .title-lt .title-wrap").css("opacity");
+		$(".type-slide .title-lt .title-wrap").css("transform");
+		$(".type-slide .title-lt .title-wrap").css({"opacity": 1, "transform": "translateX(0)"});
+		$pagerWrap.find(".pager").removeClass("active");
+		$pagerWrap.find(".pager").eq(idx).addClass("active");
+	}
+
+	function onEnter() {
+		clearInterval(interval);
+	}
+
+	function onLeave() {
+		interval = setInterval(onInterval, 3000);
+	}
+
+	function onClick() {
+		idx = $(this).index();
+		ani();
+	}
+
+	function onInterval() {
+		idx = (idx == lastIdx) ? 0 : idx + 1;
+		ani();
+	}
+
+	function ani() {
+		$(".type-slide .title-lt .title-wrap").stop().animate({"opacity": 0}, 300);
+		$($($slides[idx]).clone())
+		.appendTo($wrapper)
+		.css("background-image", "url("+bg[idx]+")")
+		.stop()
+		.animate({"opacity": 1}, 500, slideInit);
+	}
+
+})();
  
