@@ -83,7 +83,6 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .header-wrapper .top-lt .navi-wrap .divide {border-left: 1px solid #ccc; margin: -2px 20px 0 20px; height: 14px;}
 .header-wrapper .top-lt .fa-bars {font-size: 24px; display: none; cursor: pointer; margin-left: 24px;}
 
-.header-wrapper .navi-page {border: 1px solid red;}
 .header-wrapper .navi-page .sub-wrap {padding-top: 12px; position: absolute; width: 600px; color: #111; left: calc(50% - 300px);}
 .header-wrapper .navi-page .sub-wrap > div {display: flex; padding: 48px; background-color: #f1f1f1;}
 .header-wrapper .navi-page .sub-wrap ul {flex: 50% 0 0;}

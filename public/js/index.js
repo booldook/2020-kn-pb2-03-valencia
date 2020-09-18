@@ -100,22 +100,41 @@ function onBannerInterval() {
 
 function onPageEnter() {
 	$(this).find(".sub-wrap").stop().slideDown(500);
-	$(this).find(".sub-wrap").find("li").eq(0).css("transition-delay", "0.5s");
-	$(this).find(".sub-wrap").find("li").eq(1).css("transition-delay", "0.55s");
-	$(this).find(".sub-wrap").find("li").eq(2).css("transition-delay", "0.6s");
-	$(this).find(".sub-wrap").find("li").eq(3).css("transition-delay", "0.65s");
-	$(this).find(".sub-wrap").find("li").eq(4).css("transition-delay", "0.7s");
-	$(this).find(".sub-wrap").find("li").eq(5).css("transition-delay", "0.75s");
-	$(this).find(".sub-wrap").find("li").eq(6).css("transition-delay", "0.8s");
-	$(this).find(".sub-wrap").find("li").each(function(i){
-		
+	$(this).find(".sub-wrap").find("ul").each(function(){
+		$(this).find("li").each(function(i){
+			$(this).css("transition-delay", (0.25 + 0.05 * i) + "s").addClass("active")
+		});
 	});
 
 
+	/*
+	var $ul = $(this).find(".sub-wrap").find("ul");	// 2
+	for(var i=0, $li; i<$ul.length; i++) {
+		$li = $ul.eq(i).find("li");
+		for(var j=0; j<$li.length; j++){
+			$li.eq(j).css("transition-delay", (0.25 + 0.05 * j) + "s");
+			$li.eq(j).addClass("active");
+		}
+	}
+	*/
+	/*
+	$(this).find(".sub-wrap").find("ul").eq(0).find("li").eq(0).css("transition-delay", "0.5s");
+	$(this).find(".sub-wrap").find("ul").eq(0).find("li").eq(1).css("transition-delay", "0.55s");
+	$(this).find(".sub-wrap").find("ul").eq(0).find("li").eq(2).css("transition-delay", "0.6s");
+	$(this).find(".sub-wrap").find("ul").eq(0).find("li").eq(3).css("transition-delay", "0.65s");
+	$(this).find(".sub-wrap").find("ul").eq(0).find("li").eq(4).css("transition-delay", "0.7s");
+	$(this).find(".sub-wrap").find("ul").eq(0).find("li").eq(5).css("transition-delay", "0.75s");
+	$(this).find(".sub-wrap").find("ul").eq(0).find("li").eq(6).css("transition-delay", "0.8s");
+	$(this).find(".sub-wrap").find("ul").eq(0).find("li").eq(7).css("transition-delay", "0.85s");
 
-	$(this).find(".sub-wrap").find("li").addClass("active");
-
-
+	$(this).find(".sub-wrap").find("ul").eq(1).find("li").eq(0).css("transition-delay", "0.5s");
+	$(this).find(".sub-wrap").find("ul").eq(1).find("li").eq(1).css("transition-delay", "0.55s");
+	$(this).find(".sub-wrap").find("ul").eq(1).find("li").eq(2).css("transition-delay", "0.6s");
+	$(this).find(".sub-wrap").find("ul").eq(1).find("li").eq(3).css("transition-delay", "0.65s");
+	$(this).find(".sub-wrap").find("ul").eq(1).find("li").eq(4).css("transition-delay", "0.7s");
+	$(this).find(".sub-wrap").find("ul").eq(1).find("li").eq(5).css("transition-delay", "0.75s");
+	$(this).find(".sub-wrap").find("ul").eq(1).find("li").eq(6).css("transition-delay", "0.8s");
+	*/
 
 	/* setTimeout(slideCb, 250, this);
 	function slideCb(my){
