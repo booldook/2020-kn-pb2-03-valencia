@@ -177,6 +177,17 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .brand-wrapper .prd-wrapper > :not(:first-child) h2.title {font-size: 16px; font-weight: 400; font-family: 'Poppins', sans-serif;}
 
 
+/** .brand-wrapper.type-slide *********************/
+.type-slide .stage {width: 100%; position: relative; overflow: hidden;}
+.type-slide .slide-wrap {position: relative;}
+.type-slide .slide:nth-child(2) {position: absolute; top: 0; left: 0; opacity: 0;}
+.type-slide .slide > .title-wrap {position: absolute; bottom: 5vw; left: 4vw; font-size: 32px; color: #fff; transition: all 0.5s;}
+.type-slide .pager-wrap {position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); user-select: none;}
+.type-slide .pager {font-size: 30px; color: #fff; cursor: pointer;}
+.type-slide .pager.active {color: crimson;}
+
+
+
 /** Wish Modal *********************/
 .modal-wish {text-align: center; color: #333; font-size: 14px;}
 .modal-wish .title {padding: 12px 0;}
