@@ -215,7 +215,6 @@ $(".modal-wrap").click(function(e) { e.stopPropagation() });
 	var $titleLt = $(".type-slide .title-lt"); 
 	var $titles = $(".type-slide .title-lt .title-wrap");
 	var $pagerWrap = $(".type-slide .pager-wrap");
-	var bg = ['../img/slide-0.jpg','../img/slide-1.jpg','../img/slide-2.jpg','../img/slide-3.jpg'];
 	var idx = 0;
 	var lastIdx = $slides.length - 1;
 	var interval;
@@ -225,6 +224,7 @@ $(".modal-wrap").click(function(e) { e.stopPropagation() });
 		for(var i=0; i<$slides.length; i++) {
 			$pagerWrap.append('<div class="pager">·</div>');
 		}
+		$pagerWrap.find(".pager").eq(idx).addClass("active");
 		$pagerWrap.find(".pager").click(onClick);
 		interval = setInterval(onInterval, 3000);
 		$stage.mouseenter(onEnter).mouseleave(onLeave);
@@ -232,15 +232,13 @@ $(".modal-wrap").click(function(e) { e.stopPropagation() });
 	}
 
 	function slideInit() {
-		$wrapper.empty();
+		$(".type-slide .slide").remove();
 		$(".type-slide .title-lt .title-wrap").remove();
-		$($($slides[idx]).clone()).appendTo($wrapper).css("background-image", "url("+bg[idx]+")");
+		$($($slides[idx]).clone()).appendTo($wrapper);
 		$($($titles[idx]).clone()).prependTo($titleLt);
 		$(".type-slide .title-lt .title-wrap").css("opacity");
 		$(".type-slide .title-lt .title-wrap").css("transform");
 		$(".type-slide .title-lt .title-wrap").css({"opacity": 1, "transform": "translateX(0)"});
-		$pagerWrap.find(".pager").removeClass("active");
-		$pagerWrap.find(".pager").eq(idx).addClass("active");
 	}
 
 	function onEnter() {
@@ -262,12 +260,10 @@ $(".modal-wrap").click(function(e) { e.stopPropagation() });
 	}
 
 	function ani() {
+		$pagerWrap.find(".pager").removeClass("active");
+		$pagerWrap.find(".pager").eq(idx).addClass("active");
 		$(".type-slide .title-lt .title-wrap").stop().animate({"opacity": 0}, 300);
-		$($($slides[idx]).clone())
-		.appendTo($wrapper)
-		.css("background-image", "url("+bg[idx]+")")
-		.stop()
-		.animate({"opacity": 1}, 500, slideInit);
+		$($($slides[idx]).clone()).appendTo($wrapper).stop().animate({"opacity": 1}, 500, slideInit);
 	}
 
 })();

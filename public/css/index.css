@@ -197,7 +197,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .type-slide .title-rt .btn-ghost {border: none;}
 .type-slide .title-rt .btn-ghost.bar::after {border-color: #fff;}
 .type-slide .title-wrapper .pager-wrap {user-select: none; display: flex; margin-top: 30px;}
-.type-slide .pager {width: 26px; height: 26px; border: none; border-radius: 50%; display: flex; justify-content: center; cursor: pointer; font-size: 40px; font-family: san-serif; line-height: 18px;}
+.type-slide .pager {width: 26px; height: 26px; border: 1px solid transparent; border-radius: 50%; display: flex; justify-content: center; cursor: pointer; font-size: 40px; font-family: san-serif; line-height: 18px; transition: border 0.5s;}
 .type-slide .pager.active {border: 1px solid #fff; font-size: 20px; line-height: 20px;}
 
 /** Wish Modal *********************/
