@@ -65,12 +65,13 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .brand-wrapper .bts a:nth-child(1) {transition-delay: 0.2s;}
 .brand-wrapper .bts a:nth-child(2) {transition-delay: 0.3s;}
 .brand-wrapper .bts a:nth-child(3) {transition-delay: 0.4s;}
-.brand-wrapper .cont .title {margin: 24px 0;}
+.brand-wrapper .prd .cont .title {margin: 24px 0;}
 .brand-wrapper .title-wrapper .title {margin: 24px 0;}
-.brand-wrapper .cont .price {font-size: 16px; display: flex; align-items: center;}
-.brand-wrapper .cont .price .price-ori {text-decoration: line-through; margin-right: 16px;}
-.brand-wrapper .cont .price .price-cnt {background-color: red; color: #fff; margin-left: 16px; padding: 4px; font-family: 'Poppins', sans-serif; font-size: 12px;}
+.brand-wrapper .prd .cont .price {font-size: 16px; display: flex; align-items: center;}
+.brand-wrapper .prd .cont .price .price-ori {text-decoration: line-through; margin-right: 16px;}
+.brand-wrapper .prd .cont .price .price-cnt {background-color: red; color: #fff; margin-left: 16px; padding: 4px; font-family: 'Poppins', sans-serif; font-size: 12px;}
 .brand-wrapper .title-wrapper .price {font-size: 16px;}
+.brand-wrapper .title-wrapper .cont {padding: 8px 0 32px 0;}
 
 
 .modal-wrapper {width: 100%; height: 100vh; position: fixed; left: 0; top: 0; background-color: rgba(0,0,0,0.6); z-index: 9999; display: none; justify-content: center; align-items: center;}
@@ -175,10 +176,13 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .brand-wrapper .list .cont {color: #f8f8f8; position: absolute;}
 .brand-wrapper .title-wrapper {background-color: #eee; position: relative; min-width: 300px; top: 16px;}
 .brand-wrapper .title-wrap {color: #444; position: absolute; padding: 36px; width: 100%; top: calc(50vh - 158px);}
-.brand-wrapper .prd-wrapper > :first-child .cont {padding: 24px 0; font-family: 'Mukta', sans-serif; left: 60px; bottom: 60px;}
-.brand-wrapper .prd-wrapper > :not(:first-child) .cont {padding: 12px 0; font-family: 'Mukta', sans-serif; left: 24px; bottom: 24px;}
-.brand-wrapper .prd-wrapper > :first-child h2.title {font-size: 36px; font-weight: 300; font-family: 'Poppins', sans-serif;}
-.brand-wrapper .prd-wrapper > :not(:first-child) h2.title {font-size: 16px; font-weight: 400; font-family: 'Poppins', sans-serif;}
+.brand-wrapper.type-1 .prd-wrapper > :first-child .cont {padding: 24px 0; font-family: 'Mukta', sans-serif; left: 60px; bottom: 60px;}
+.brand-wrapper.type-1 .prd-wrapper > :not(:first-child) .cont {padding: 12px 0; font-family: 'Mukta', sans-serif; left: 24px; bottom: 24px;}
+.brand-wrapper.type-1 .prd-wrapper > :first-child h2.title {font-size: 36px; font-weight: 300; font-family: 'Poppins', sans-serif;}
+.brand-wrapper.type-1 .prd-wrapper > :not(:first-child) h2.title {font-size: 16px; font-weight: 400; font-family: 'Poppins', sans-serif;}
+
+.brand-wrapper.type-2 .prd-wrapper .cont {padding: 12px 0; font-family: 'Mukta', sans-serif; left: 24px; bottom: 24px;}
+.brand-wrapper.type-2 .prd-wrapper h2.title {font-size: 16px; font-weight: 400; font-family: 'Poppins', sans-serif;}
 
 
 /** .brand-slide.type-slide *********************/
