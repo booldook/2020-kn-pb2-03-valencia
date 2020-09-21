@@ -204,6 +204,19 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .type-slide .pager {width: 26px; height: 26px; border: 1px solid transparent; border-radius: 50%; display: flex; justify-content: center; cursor: pointer; font-size: 40px; font-family: san-serif; line-height: 18px; transition: border 0.5s;}
 .type-slide .pager.active {border: 1px solid #fff; font-size: 20px; line-height: 20px;}
 
+
+/** .info-wrapper *********************/
+.info-wrapper {display: flex;}
+.info-wrapper > .info-lt {position: relative; background: url(../img/info-1.jpg) no-repeat center; background-size: cover;}
+.info-wrapper > .info-lt > .cont {position: absolute; width: 90%; left: 5%; bottom: 7%; color: #fff; display: flex; flex-direction: column; align-items: flex-start;}
+.info-wrapper > .info-lt > .cont .title {margin: 32px 0;}
+.info-wrapper > .info-lt > .cont .underline {display: inline-block;}
+.info-wrapper > .info-rt {display: flex; margin: 0;}
+.info-wrapper > .info-rt > .info-rt-2 > :first-child {margin-bottom: 32px;}
+.info-wrapper > .info-lt .underline::after {display: block; content: ""; border: 1px solid #fff; transform-origin: left; transition: all 0.5s; transform: scaleX(0);}
+.info-wrapper .tag {background-color: #111; color: #fff; padding: 3px; font-size: 12px;}
+.info-wrapper > .info-lt:hover .underline::after {transform: scaleX(1);}
+
 /** Wish Modal *********************/
 .modal-wish {text-align: center; color: #333; font-size: 14px;}
 .modal-wish .title {padding: 12px 0;}
