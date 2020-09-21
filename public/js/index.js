@@ -32,8 +32,18 @@ function headerBanner() {
 	$(".header-wrapper").find(".list").eq(headerListIdx).addClass("active");
 }
 
-function prdAni() {
-	console.log($(prdIdx));
+function prdAni($my, clsName) {
+	var $list, $pager;
+	if(clsName == "prd-stage") {
+		$list = $my.find(".list");
+		$pager = $my.find(".pager").eq(prdListIdx);
+	}
+	if(clsName == "pager") {
+		$list = $my.parent().prev().find(".list");
+		$pager = $my;
+	}
+	console.log($list, $pager);
+	/*
 	$(".prd-stage").eq(prdIdx).find(".pager").removeClass("active");
 	$(".prd-stage").eq(prdIdx).find(".pager").eq(prdListIdx).addClass("active");
 	
@@ -41,6 +51,7 @@ function prdAni() {
 		$(this).css({"display": "none"});
 	});
 	$(".prd-stage").eq(prdIdx).find(".list").eq(prdListIdx).css({"position": "relative", "display": "block"}).stop().animate({"opacity": 1}, 500);
+	*/
 }
 
 /********************** 이벤트콜백 *************************/
@@ -166,22 +177,21 @@ function onPageLeave() {
 }
 
 function onPrdOver() {
-	prdIdx = $(this).index();
 	prdLastIdx = $(this).find(".list").length - 1;
 	prdListIdx = 1;
 	prdInterval = setInterval(onPrdInterval, 4000);
-	prdAni();
+	prdAni($(this), "prd-stage");		//.prd-stage
 }
 
 function onPrdLeave() {
 	prdListIdx = 0;
 	clearInterval(prdInterval);
-	prdAni();
+	prdAni($(this), "prd-stage");		//.prd-stage
 }
 
 function onPagerClick() {
 	prdListIdx = $(this).index();
-	prdAni();
+	prdAni($(this), "pager");				// .pager
 	clearInterval(prdInterval);
 	prdInterval = setInterval(onPrdInterval, 4000);
 }
