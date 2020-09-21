@@ -287,3 +287,17 @@ $(".modal-wrap").click(function(e) { e.stopPropagation() });
 
 })();
  
+
+/************ .info-wrapper *************/
+$(".info-wrapper > .info-lt").mouseenter(onInfoLtOver);
+$(".info-wrapper > .info-lt").mouseleave(onInfoLtLeave);
+function onInfoLtOver() {
+	$(this).find(".underline").eq(0).find("div").attr("style", "");
+	$(this).find(".underline").eq(1).find("div").attr("style", "");
+	$(this).find(".underline").eq(0).find("div").css({"animation-delay": "0s", "animation-name": "underline"});
+	$(this).find(".underline").eq(1).find("div").css({"animation-delay": "0.25s", "animation-name": "underline"});
+}
+function onInfoLtLeave() {
+	$(this).find(".underline").eq(0).find("div").css({"transform": "scaleX(1)", "animation-delay": "0.25s", "animation-name": "underline-rev"});
+	$(this).find(".underline").eq(1).find("div").css({"transform": "scaleX(1)", "animation-delay": "0s", "animation-name": "underline-rev"});
+}

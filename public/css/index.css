@@ -213,10 +213,20 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .info-wrapper > .info-lt > .cont .underline {display: inline-block;}
 .info-wrapper > .info-rt {display: flex; margin: 0;}
 .info-wrapper > .info-rt > .info-rt-2 > :first-child {margin-bottom: 32px;}
-.info-wrapper > .info-lt .underline::after {display: block; content: ""; border: 1px solid #fff; transform-origin: left; transition: all 0.25s; transform: scaleX(0);}
 .info-wrapper .tag {background-color: #111; color: #fff; padding: 3px; font-size: 12px;}
-.info-wrapper > .info-lt .underline:last-child::after {transition-delay: 0.25s;}
-.info-wrapper > .info-lt:hover .underline::after {transform: scaleX(1);}
+.info-wrapper > .info-lt .underline > div {border: 1px solid #fff; 
+	transform-origin: left; transform: scaleX(0); 
+	animation-fill-mode: forwards; animation-duration: 0.25s;
+}
+
+@keyframes underline {
+	0% {transform: scaleX(0);}
+	100% {transform: scaleX(1);}
+}
+@keyframes underline-rev {
+	0% {transform: scaleX(1);}
+	100% {transform: scaleX(0);}
+}
 
 /** Wish Modal *********************/
 .modal-wish {text-align: center; color: #333; font-size: 14px;}
