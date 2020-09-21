@@ -55,6 +55,8 @@
 		</div>
 	</div>
 	<script>
+		var $list;
+		var $pager;
 		// $(".lists").eq(0).find(".list").eq(0).css("z-index", 1);
 		// $(".lists").eq(1).find(".list").eq(0).css("z-index", 1);
 		// $(".lists").eq(2).find(".list").eq(0).css("z-index", 1);
@@ -63,11 +65,12 @@
 			$(this).find(".list").eq(0).css("z-index", 1);
 		});
 
-		//find(): 자손, children: 자식, parent(): 부모, parents(): 조상, next(), prev(), siblings()
+		//find(): 자손, children: 자식, parent(): 부모, parents(): 조상, next(), prev(), siblings(), first(), last()
 		$(".pager").click(function(){
 			console.log($(this).parent().parent().parent());
 			console.log($(this).parents(".wrapper"));
-			var id = $(this).index();
+			$pager = $(this);
+			$list = $(this).parent().prev().find(".list").eq($(this).index());
 			/*
 			var stageId = $(this).parent().parent().index();
 			$(".prd-stage").eq(stageId).find(".list").css("z-index", 0);
@@ -77,7 +80,9 @@
 			$(this).parent().prev().find(".list").css("z-index", 0);
 			$(this).parent().prev().find(".list").eq(id).css("z-index", 1);
 			*/
-			$(this).parent().prev().find(".list").eq(id).css("z-index", 1).siblings().css("z-index", 0);
+			$list.css("z-index", 1).siblings().css("z-index", 0);
+			$pager.css("color", "red").siblings().css("color", "#000");
+			ani();
 		});
 
 

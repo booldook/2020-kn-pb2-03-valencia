@@ -17,9 +17,13 @@ var bannerInterval;
 var winWid;
 var winHei;
 
+var $list;			// 현재 선택된 .list
+var $pager;			// 현재 선택된 .pager
+var prdLastIdx;	// 상품의 이미지의 마지막 idx값(length-1) - 상품에 hover할때만 변한다.
+/*
 var prdIdx;					// 상품의 idx - 상품에 hover할때만 변한다.
-var prdLastIdx;			// 상품의 이미지의 마지막 idx값(length-1) - 상품에 hover할때만 변한다.
 var prdListIdx;			// 상품에서 이미지의 idx - Interval, pagerclick, 상품에 hover(1), leave(0)
+*/
 var prdInterval;		// 상품의 Animation 간격
 
 var brandTitleWidth;
@@ -32,26 +36,16 @@ function headerBanner() {
 	$(".header-wrapper").find(".list").eq(headerListIdx).addClass("active");
 }
 
-function prdAni($my, clsName) {
-	var $list, $pager;
-	if(clsName == "prd-stage") {
-		$list = $my.find(".list");
-		$pager = $my.find(".pager").eq(prdListIdx);
-	}
-	if(clsName == "pager") {
-		$list = $my.parent().prev().find(".list");
-		$pager = $my;
-	}
-	console.log($list, $pager);
-	/*
-	$(".prd-stage").eq(prdIdx).find(".pager").removeClass("active");
-	$(".prd-stage").eq(prdIdx).find(".pager").eq(prdListIdx).addClass("active");
-	
-	$(".prd-stage").eq(prdIdx).find(".list").css({"position": "absolute"}).stop().animate({"opacity": 0}, 500, function(){
+function prdAni() {
+	$pager.addClass("active").siblings().removeClass("active");
+	$list
+	.css({"position": "relative", "display": "block"})
+	.stop().animate({"opacity": 1}, 500)
+	.siblings()
+	.css({"position": "absolute"})
+	.stop().animate({"opacity": 0}, 500, function(){
 		$(this).css({"display": "none"});
 	});
-	$(".prd-stage").eq(prdIdx).find(".list").eq(prdListIdx).css({"position": "relative", "display": "block"}).stop().animate({"opacity": 1}, 500);
-	*/
 }
 
 /********************** 이벤트콜백 *************************/
@@ -177,28 +171,31 @@ function onPageLeave() {
 }
 
 function onPrdOver() {
-	prdLastIdx = $(this).find(".list").length - 1;
-	prdListIdx = 1;
+	$list = $(this).find(".list").eq(1);
+	$pager = $(this).find(".pager").eq(1);
 	prdInterval = setInterval(onPrdInterval, 4000);
-	prdAni($(this), "prd-stage");		//.prd-stage
+	prdAni();
 }
 
 function onPrdLeave() {
-	prdListIdx = 0;
+	$list = $(this).find(".list").eq(0);
+	$pager = $(this).find(".pager").eq(0);
 	clearInterval(prdInterval);
-	prdAni($(this), "prd-stage");		//.prd-stage
+	prdAni();
 }
 
 function onPagerClick() {
-	prdListIdx = $(this).index();
-	prdAni($(this), "pager");				// .pager
+	var idx = $(this).index();
+	$list = $(this).parent().prev().find(".list").eq(idx);
+	$pager = $(this);
+	prdAni();
 	clearInterval(prdInterval);
 	prdInterval = setInterval(onPrdInterval, 4000);
 }
 
 function onPrdInterval(){
-	if(prdListIdx == prdLastIdx) prdListIdx = 0;
-	else prdListIdx++;
+	$list = ($list.index() == $list.siblings().length) ? $list.siblings().eq(0) : $list.next();
+	$pager = $list.parent().next().find(".pager").eq($list.index());
 	prdAni();
 }
 
