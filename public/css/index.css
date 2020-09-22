@@ -266,9 +266,14 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
 .modal-wish .btn-close {font-weight: bold; padding: 6px; cursor: pointer;}
 
 /** bottom-wrapper *********************/
-.bottom-wrapper {background-color: rgba(0,0,0,0.4); padding: 8px; width: 90%; position: fixed; bottom: 0; left: 5%; box-shadow: 0 0 10px rgba(0,0,0,0.5); border-radius: 6px 6px 0 0; z-index: 9999;}
-.bottom-wrapper > .navi-wrap {position: absolute; height: 60px; top: -60px; right: 0; background-color: inherit; color: #fff; display: flex; align-items: center; padding: 12px; border-radius: inherit;}
-.bottom-wrapper > .navi-wrap .navi {padding: 0 36px; font-size: 12px;}
+.bottom-wrapper {width: 90%; position: fixed; bottom: -70px; left: 5%; z-index: 9999; display: flex; align-items: flex-end; opacity: .7; transition: all 0.5s;}
+.bottom-wrapper:hover {opacity: 1;}
+.bottom-wrapper > .box {flex: 100% 1 1; height: 16px; background-color: #333; border-radius: 6px 0 0 0; box-shadow: 0 0 8px rgba(0,0,0,0.5); position: relative;}
+.bottom-wrapper > .box::after {display: block; content: ""; height: 16px; width: 20px; position: absolute; right: -10px; bottom: 0; background-color: #333;}
+.bottom-wrapper > .navi-wrap {flex-grow: 0; height: 60px; color: #fff; display: flex; align-items: center; padding: 12px; border-radius: 6px 6px 0 0; background-color: #333; box-shadow: 0 0 8px rgba(0,0,0,0.5);}
+.bottom-wrapper > .navi-wrap .navi {padding: 0 36px; font-size: 12px; display: flex; align-items: center; cursor: pointer;}
+.bottom-wrapper > .navi-wrap .navi:hover span {text-decoration: underline;}
+.bottom-wrapper > .navi-wrap .navi .fa {padding-left: 12px;}
 
 
 

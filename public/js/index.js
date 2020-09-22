@@ -28,6 +28,8 @@ var prdInterval;		// 상품의 Animation 간격
 
 var brandTitleWidth;
 
+var bottomChk = true; // .btnClose가 클릭되었는지 체크
+
 /********************** 사용자함수 *************************/
 function headerBanner() {
 	$(".header-wrapper").find(".banner").css({"opacity": 0, "transform": "scale(1.3)"});
@@ -58,8 +60,14 @@ function onScroll() {
 	// console.log(section[1], sct);
 
 	// header-banner 프레임 애니메이션
-	if(sct > 0) $(".banner-frame").css("border-width", "32px");
-	else $(".banner-frame").css("border-width", 0);
+	if(sct > 0) {
+		$(".banner-frame").css("border-width", "32px");
+		if(bottomChk) $(".bottom-wrapper").css("bottom", 0);
+	}
+	else {
+		$(".banner-frame").css("border-width", 0);
+		$(".bottom-wrapper").css("bottom", "-70px");
+	}
 
 	if(winWid > 991) {
 		if(section[1] > sct) {
@@ -209,6 +217,17 @@ function onModalHide() {
 	$(".modal-wrapper").css("display", "none");
 }
 
+function onTop() {
+	$("html, body").stop().animate({"scrollTop": 0}, 500);
+}
+
+function onClose() {
+	if(bottomChk) {
+		bottomChk = false;
+		$(".bottom-wrapper").css("bottom", "-70px");
+	}
+}
+
 /********************** 이벤트등록 *************************/
 $(window).scroll(onScroll);
 $(window).resize(onResize).imagesLoaded(function(){
@@ -227,6 +246,8 @@ $(".brand-wrapper .prd-stage").find(".pager").click(onPagerClick);
 $(".brand-wrapper .btn-wish").click(onWishModalShow);
 $(".modal-wrapper .btn-close, .modal-wrapper").click(onModalHide);
 $(".modal-wrap").click(function(e) { e.stopPropagation() });
+$("#btnTop").click(onTop);
+$("#btnClose").click(onClose);
 
 /********************** 슬라이드 *************************/
 (function(){
