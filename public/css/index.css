@@ -207,11 +207,11 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 
 
 /** .info-wrapper *********************/
-.info-wrapper {display: flex;}
+.info-wrapper {display: flex; flex-wrap: wrap;}
 .info-wrapper > .info-lt {position: relative; background: url(../img/info-1.jpg) no-repeat center; background-size: cover;}
 .info-wrapper > .info-lt > .cont {position: absolute; width: 90%; left: 5%; bottom: 7%; color: #fff; display: flex; flex-direction: column; align-items: flex-start;}
 .info-wrapper > .info-lt > .cont .title {margin: 32px 0; user-select: none;}
-.info-wrapper > .info-rt {display: flex; margin: 0;}
+.info-wrapper > .info-rt {display: flex; flex-wrap: wrap; margin: 0;}
 .info-wrapper > .info-rt > .info-rt-2 > :first-child {margin-bottom: 32px;}
 .info-wrapper .tag {background-color: #111; color: #fff; padding: 3px; font-size: 12px;}
 
@@ -224,6 +224,17 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .info-wrapper > .info-lt:hover .underline::after {transform: scaleX(1);}
 .info-wrapper .info-rt-1 {text-align: right;}
 .info-wrapper .info-rt-1 .title {color: #999; font-size: 35px; line-height: 1.2; margin: 32px 0;}
+
+/** footer *********************/
+.footer-wrapper {padding: 5%; background-color: #212121; color: #f1f1f1; margin-top: 16px;}
+.footer-wrapper .footer-info {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;}
+.footer-wrapper .footer-info .info:nth-child(2) {display: flex; align-items: center;}
+.footer-wrapper .footer-info .info:nth-child(2) i {font-size: 24px; margin-right: 16px;}
+.footer-wrapper .footer-info .underbar {margin-bottom: 4px;}
+.footer-wrapper .footer-info .underbar::after {display: block; content: ""; height: 1px; background-color: #444; transition: all 0.5s; transform-origin: top;}
+.footer-wrapper .footer-info .underbar:hover::after {background-color: #888; transform: scaleY(3);}
+.footer-wrapper .footer-info .info:nth-child(4) i {font-size: 20px; margin: 0 8px; }
+
 
 /** Wish Modal *********************/
 .modal-wish {text-align: center; color: #333; font-size: 14px;}
@@ -269,6 +280,8 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 	.type-slide .title-wrapper {width: 94%; left: 3%; bottom: 5%; flex-direction: column; justify-content: flex-end;}
 	.type-slide .title-rt {align-items: flex-start;}
 	.type-slide .title-rt .btn-ghost {padding-left: 0;}
+	.info-wrapper > .info-lt {height: 400px;}
+	.info-wrapper > .info-rt {margin: 16px;}
 }
 
 @media screen and (max-width: 767px) {
