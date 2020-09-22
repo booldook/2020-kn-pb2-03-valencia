@@ -50,7 +50,9 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 
 .x100 {flex: calc(100% - 32px) 0 0; margin: 16px;}
 .x75 {flex: calc(75% - 32px) 0 0; margin: 16px;}
+.x60 {flex: calc(60% - 32px) 0 0; margin: 16px;}
 .x50 {flex: calc(50% - 32px) 0 0; margin: 16px;}
+.x40 {flex: calc(40% - 32px) 0 0; margin: 16px;}
 .x33 {flex: calc(33.3333% - 32px) 0 0; margin: 16px;}
 .x25 {flex: calc(25% - 32px) 0 0; margin: 16px;}
 
@@ -241,9 +243,14 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .footer-wrapper .footer-info .info:nth-child(5) input::placeholder {font-size: 12px;}
 .footer-wrapper .footer-info .info:nth-child(5) button {position: absolute; right: 2px; top: 8px; background-color: transparent; border: none; outline-style: none; color: #f1f1f1;}
 .footer-wrapper .footer-navi {margin: 16px 0; display: flex; flex-wrap: wrap;}
+.footer-wrapper .footer-navi .navi-wrapper {display: flex; flex-wrap: wrap; border: 1px solid yellow;}
 .footer-wrapper .footer-navi .navi-wrap {display: flex; flex-wrap: wrap; margin-top: 16px;}
 .footer-wrapper .footer-navi .navi-wrap a {display: inline-block;}
 .footer-wrapper .footer-navi .navi-wrap .navi {margin: 8px 0; font-size: 12px;}
+.footer-wrapper .footer-navi .icon-wrapper {display: flex; flex-wrap: wrap; justify-content: center; align-items: center; border: 1px solid green;}
+.footer-wrapper .footer-navi .icon-wrap {padding: 0 18px;}
+.footer-wrapper .footer-navi .icon-wrap .icon {padding-bottom: 24px; font-size: 36px;}
+.footer-wrapper .footer-navi .icon-wrap .title {font-size: 14px;}
 
 
 /** Wish Modal *********************/
@@ -281,7 +288,11 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 	.link-wrapper {margin-top: 0;}
 	.link-wrapper > .link {background-size: cover !important;}
 	.x75 {flex: calc(100% - 32px) 0 0;}
+	.x60 {flex: calc(100% - 32px) 0 0;}
 	.x50 {flex: calc(100% - 32px) 0 0;}
+	.navi.x50 {flex: calc(50% - 32px) 0 0;}
+	/* .navi.x50:nth-child(even) {margin-left: 32px;} */
+	.x40 {flex: calc(100% - 32px) 0 0;}
 	.x25 {flex: calc(50% - 32px) 0 0;}
 	.brand-wrapper {padding: 0; flex-direction: column; align-items: center; justify-content: center;}
 	.brand-wrapper > .prd-wrapper {order: 2;}
