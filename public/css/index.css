@@ -29,6 +29,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 
 .hover-active, .hover-link, .hover-ani, .bar-infinity {cursor: pointer;}
 .hover-active::after, .hover-link::after, .hover-ani::after, .bar-infinity::after {display: block; content: ""; border-bottom:2px solid #fff;}
+.hover-active.dark::after, .hover-link.dark::after, .hover-ani.dark::after, .bar-infinity.dark::after {border-bottom:2px solid #111;}
 .hover-active::after {transition: all 0.3s; transform-origin: right; transform: scaleX(1);}
 .hover-active:hover::after {transform-origin: left; transform: scaleX(0);}
 .hover-link::after {transition: all 0.3s; transform-origin: left; transform: scaleX(0);}
@@ -209,24 +210,20 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .info-wrapper {display: flex;}
 .info-wrapper > .info-lt {position: relative; background: url(../img/info-1.jpg) no-repeat center; background-size: cover;}
 .info-wrapper > .info-lt > .cont {position: absolute; width: 90%; left: 5%; bottom: 7%; color: #fff; display: flex; flex-direction: column; align-items: flex-start;}
-.info-wrapper > .info-lt > .cont .title {margin: 32px 0;}
-.info-wrapper > .info-lt > .cont .underline {display: inline-block;}
+.info-wrapper > .info-lt > .cont .title {margin: 32px 0; user-select: none;}
 .info-wrapper > .info-rt {display: flex; margin: 0;}
 .info-wrapper > .info-rt > .info-rt-2 > :first-child {margin-bottom: 32px;}
 .info-wrapper .tag {background-color: #111; color: #fff; padding: 3px; font-size: 12px;}
-.info-wrapper > .info-lt .underline > div {border: 1px solid #fff; 
-	transform-origin: left; transform: scaleX(0); 
-	animation-fill-mode: forwards; animation-duration: 0.25s;
-}
 
-@keyframes underline {
-	0% {transform: scaleX(0);}
-	100% {transform: scaleX(1);}
-}
-@keyframes underline-rev {
-	0% {transform: scaleX(1);}
-	100% {transform: scaleX(0);}
-}
+.info-wrapper > .info-lt .underline {display: inline-block;}
+.info-wrapper > .info-lt .underline::after {border: 1px solid #fff; display: block; content: ""; transition: all 0.25s; transform-origin: left; transform: scaleX(0);}
+.info-wrapper > .info-lt .underline:nth-child(1)::after {transition-delay: 0.25s;}
+.info-wrapper > .info-lt .underline:nth-child(3)::after {transition-delay: 0s;}
+.info-wrapper > .info-lt:hover .underline:nth-child(1)::after {transition-delay: 0s;}
+.info-wrapper > .info-lt:hover .underline:nth-child(3)::after {transition-delay: 0.25s;}
+.info-wrapper > .info-lt:hover .underline::after {transform: scaleX(1);}
+.info-wrapper .info-rt-1 {text-align: right;}
+.info-wrapper .info-rt-1 .title {color: #999; font-size: 35px; line-height: 1.2; margin: 32px 0;}
 
 /** Wish Modal *********************/
 .modal-wish {text-align: center; color: #333; font-size: 14px;}
