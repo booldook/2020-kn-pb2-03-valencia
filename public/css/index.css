@@ -28,7 +28,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .btn-ghost.bar::after {content: ""; display: block; width: 24px; border-top: 1px solid #222; margin-left: 12px; transition: all 0.5s; transition-delay: 0.3s;}
 
 .hover-active, .hover-link, .hover-ani, .bar-infinity {cursor: pointer;}
-.hover-active::after, .hover-link::after, .hover-ani::after, .bar-infinity::after {display: block; content: ""; border-bottom:2px solid #fff;}
+.hover-active::after, .hover-link::after, .hover-ani::after, .bar-infinity::after {display: block; content: ""; border-bottom: 2px solid #fff;}
 .hover-active.dark::after, .hover-link.dark::after, .hover-ani.dark::after, .bar-infinity.dark::after {border-bottom:2px solid #111;}
 .hover-active::after {transition: all 0.3s; transform-origin: right; transform: scaleX(1);}
 .hover-active:hover::after {transform-origin: left; transform: scaleX(0);}
@@ -227,6 +227,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 
 /** footer *********************/
 .footer-wrapper {padding: 5%; background-color: #212121; color: #f1f1f1; margin-top: 16px;}
+
 .footer-wrapper .footer-info {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;}
 .footer-wrapper .footer-info .info:nth-child(2) {display: flex; align-items: center;}
 .footer-wrapper .footer-info .info:nth-child(2) i {font-size: 24px; margin-right: 16px;}
@@ -234,6 +235,15 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .footer-wrapper .footer-info .underbar::after {display: block; content: ""; height: 1px; background-color: #444; transition: all 0.5s; transform-origin: top;}
 .footer-wrapper .footer-info .underbar:hover::after {background-color: #888; transform: scaleY(3);}
 .footer-wrapper .footer-info .info:nth-child(4) i {font-size: 20px; margin: 0 8px; }
+.footer-wrapper .footer-info .info:nth-child(5) {color: #aaa;}
+.footer-wrapper .footer-info .info:nth-child(5) form {position: relative; margin-top: 8px;}
+.footer-wrapper .footer-info .info:nth-child(5) input {border-radius: 1px; outline-style: none; border: 1px solid #999; background-color: transparent; padding: 8px; width: 100%;}
+.footer-wrapper .footer-info .info:nth-child(5) input::placeholder {font-size: 12px;}
+.footer-wrapper .footer-info .info:nth-child(5) button {position: absolute; right: 2px; top: 8px; background-color: transparent; border: none; outline-style: none; color: #f1f1f1;}
+.footer-wrapper .footer-navi {margin: 16px 0; display: flex; flex-wrap: wrap;}
+.footer-wrapper .footer-navi .navi-wrap {display: flex; flex-wrap: wrap; margin-top: 16px;}
+.footer-wrapper .footer-navi .navi-wrap a {display: inline-block;}
+.footer-wrapper .footer-navi .navi-wrap .navi {margin: 8px 0; font-size: 12px;}
 
 
 /** Wish Modal *********************/

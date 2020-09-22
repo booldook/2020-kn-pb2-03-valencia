@@ -211,7 +211,9 @@ function onModalHide() {
 
 /********************** 이벤트등록 *************************/
 $(window).scroll(onScroll);
-$(window).resize(onResize).trigger("resize");
+$(window).resize(onResize).imagesLoaded(function(){
+	$(window).trigger("resize");
+});
 $(".header-wrapper").find(".list").hover(onListOver, onListLeave);
 bannerInterval = setInterval(onBannerInterval, 8000);
 
