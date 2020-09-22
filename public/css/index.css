@@ -4,7 +4,7 @@
 /* font-family: 'Poppins', sans-serif; */
 
 /** 공통사항 *********************/
-html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height: 20000px;}
+html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
 
 .wow-ani {animation-duration: 1s;}
 
@@ -243,14 +243,19 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .footer-wrapper .footer-info .info:nth-child(5) input::placeholder {font-size: 12px;}
 .footer-wrapper .footer-info .info:nth-child(5) button {position: absolute; right: 2px; top: 8px; background-color: transparent; border: none; outline-style: none; color: #f1f1f1;}
 .footer-wrapper .footer-navi {margin: 16px 0; display: flex; flex-wrap: wrap;}
-.footer-wrapper .footer-navi .navi-wrapper {display: flex; flex-wrap: wrap; border: 1px solid yellow;}
+.footer-wrapper .footer-navi .navi-wrapper {display: flex; flex-wrap: wrap;}
 .footer-wrapper .footer-navi .navi-wrap {display: flex; flex-wrap: wrap; margin-top: 16px;}
 .footer-wrapper .footer-navi .navi-wrap a {display: inline-block;}
 .footer-wrapper .footer-navi .navi-wrap .navi {margin: 8px 0; font-size: 12px;}
-.footer-wrapper .footer-navi .icon-wrapper {display: flex; flex-wrap: wrap; justify-content: center; align-items: center; border: 1px solid green;}
+.footer-wrapper .footer-navi .icon-wrapper {display: flex; flex-wrap: wrap; justify-content: center; align-items: center;}
 .footer-wrapper .footer-navi .icon-wrap {padding: 0 18px;}
 .footer-wrapper .footer-navi .icon-wrap .icon {padding-bottom: 24px; font-size: 36px;}
 .footer-wrapper .footer-navi .icon-wrap .title {font-size: 14px;}
+
+.footer-wrapper .footer-copy {display: flex; flex-wrap: wrap; align-items: center;}
+.footer-wrapper .footer-copy > div {margin-right: 32px;}
+.footer-wrapper .footer-copy .cards i {font-size: 24px; opacity: 0.7; transition: all 0.5s;}
+.footer-wrapper .footer-copy .cards i:hover {opacity: 1;}
 
 
 /** Wish Modal *********************/
@@ -259,6 +264,12 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 .modal-wish .title-sm {color: #777; padding: 12px;}
 .modal-wish .cont {font-weight: bold; padding: 12px;}
 .modal-wish .btn-close {font-weight: bold; padding: 6px; cursor: pointer;}
+
+/** bottom-wrapper *********************/
+.bottom-wrapper {background-color: rgba(0,0,0,0.4); padding: 8px; width: 90%; position: fixed; bottom: 0; left: 5%; box-shadow: 0 0 10px rgba(0,0,0,0.5); border-radius: 6px 6px 0 0; z-index: 9999;}
+.bottom-wrapper > .navi-wrap {position: absolute; height: 60px; top: -60px; right: 0; background-color: inherit; color: #fff; display: flex; align-items: center; padding: 12px; border-radius: inherit;}
+.bottom-wrapper > .navi-wrap .navi {padding: 0 36px; font-size: 12px;}
+
 
 
 /** 반응형 *********************/
@@ -291,7 +302,7 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 	.x60 {flex: calc(100% - 32px) 0 0;}
 	.x50 {flex: calc(100% - 32px) 0 0;}
 	.navi.x50 {flex: calc(50% - 32px) 0 0;}
-	/* .navi.x50:nth-child(even) {margin-left: 32px;} */
+	.footer-navi .navi:nth-child(even) {margin-left: 48px;}
 	.x40 {flex: calc(100% - 32px) 0 0;}
 	.x25 {flex: calc(50% - 32px) 0 0;}
 	.brand-wrapper {padding: 0; flex-direction: column; align-items: center; justify-content: center;}
@@ -313,9 +324,15 @@ html, body {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; height:
 	.brand-wrapper .prd-wrapper > :first-child h2.title {font-size: 20px;}
 	.brand-wrapper .prd-wrapper > :not(:first-child) h2.title {font-size: 20px;}
 	.brand-wrapper .prd-wrapper > :first-child .cont {left: 12px; bottom: 12px;}
+	.navi.x50 {flex: calc(100% - 32px) 0 0;}
+	.footer-navi .navi:nth-child(even) {margin-left: 0;}
+	.footer-wrapper .footer-info {flex-direction: column; align-items: flex-start;}
+	.footer-wrapper .footer-info .info {margin: 16px 0 16px 36px;}
+	.footer-wrapper .footer-copy > div {flex: 100% 0 0;}
 }
 
 @media screen and (max-width: 575px) {
-
+	.footer-wrapper .footer-navi .icon-wrap {padding: 0 12px;}
+	.footer-wrapper .footer-navi .icon-wrap .icon {padding-bottom: 18px; font-size: 24px;}
 } 
 
